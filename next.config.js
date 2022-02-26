@@ -1,15 +1,29 @@
+const CompressionPlugin = require("compression-webpack-plugin");
+
+const isProd = process.env.NODE_ENV === "production";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  swcMinify: true,
+  compress: true,
   reactStrictMode: true,
-  pageExtensions: ["stories.tsx", "tsx"],
+  compiler: {
+    removeConsole: isProd,
+  },
+  pageExtensions: isProd ? ["stories.tsx", "tsx"] : ["tsx"],
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    config.plugins.push(
+    const plugins = [
+      ...config.plugins,
       new webpack.IgnorePlugin({
         resourceRegExp: /.*\.test(\.).*(ts|tsx)$/,
       }),
-    );
+    ];
 
-    return config;
+    if (isProd) {
+      plugins.push(new CompressionPlugin());
+    }
+
+    return { ...config, plugins, devtool: isProd ? false : "eval" };
   },
 };
 
