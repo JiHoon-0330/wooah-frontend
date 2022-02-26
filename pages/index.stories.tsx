@@ -5,4 +5,4 @@ export default {
   component: Home,
 };
 
-export const Template = () => <Home />;
+export const Default = () => <Home />;
