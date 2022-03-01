@@ -1,0 +1,12 @@
+.wrapper > * {
+  margin-bottom: 10rem;
+}
+.wrapper > *:nth-last-child(1) {
+  margin-bottom: 0;
+}
+
+.top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}

@@ -1,0 +1,10 @@
+.message {
+  font-size: 15rem;
+  font-weight: 600;
+}
+.message.error {
+  color: rgb(221, 40, 40);
+}
+.message.warn {
+  color: rgb(218, 151, 27);
+}

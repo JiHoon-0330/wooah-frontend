@@ -1,0 +1,9 @@
+.images {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.images > * {
+  border-radius: var(--rounded-default);
+  overflow: hidden;
+}
