@@ -25,7 +25,7 @@ const Navbar = () => {
       {list.map((menu) => {
         const path = MATCH[menu];
         return (
-          <Link href={path}>
+          <Link href={path} key={menu}>
             <a>
               <button
                 className={`${path === router.asPath ? styles.selected : ""} ${

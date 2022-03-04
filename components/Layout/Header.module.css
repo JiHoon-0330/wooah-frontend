@@ -8,10 +8,15 @@
   font-size: 16rem;
   font-weight: 500;
   z-index: 10;
+  transition: all 0.3s ease-in-out;
 }
 
 .header > * {
   flex: 1;
   text-align: center;
   padding: 2rem 0;
+}
+
+.hidden {
+  transform: translateY(-100%);
 }
