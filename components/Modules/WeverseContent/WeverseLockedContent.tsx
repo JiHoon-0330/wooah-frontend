@@ -6,13 +6,26 @@ import {
   useState,
 } from "react";
 import useInput from "../../../hooks/useInput";
-import apiAxios from "../../../services/api/axios";
+import customAxios from "../../../services/api/customAxios";
+import {
+  WeverseArtistId,
+  WeverseAttachedVideos,
+  WeversePhoto,
+} from "../../../types/weverse/weverseType";
 import Body from "../../Atoms/Body/Body";
 import Button from "../../Atoms/Button/Button";
 import Input from "../../Atoms/Input/Input";
 import Message from "../../Atoms/Message/Message";
-import { LockedPostDataType } from "../WeversePost/WeversePost";
 import styles from "./WeverseLockedContent.module.css";
+
+export type LockedPostDataType = {
+  artistId: WeverseArtistId;
+  profileNickname: string;
+  createdAt: string;
+  body: string;
+  photos?: WeversePhoto[];
+  attachedVideos?: WeverseAttachedVideos[];
+};
 
 interface Props {
   contentsId: string;
@@ -29,20 +42,16 @@ const WeverseLockedContent = ({ contentsId, setData }: Props) => {
   const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
     setIsLoading(true);
     e.preventDefault();
-    try {
-      const { data } = await apiAxios({
-        url: `/weverse/post/${contentsId}`,
-        method: "POST",
-        data: {
-          lockPassword: value,
-        },
-      });
-      setData(data);
-    } catch (error: any) {
-      if (error?.response?.data) {
-        setErrorMessage(error?.response?.data);
-      }
-    }
+
+    const [data, error] = await customAxios<LockedPostDataType>({
+      url: `/weverse/post/${contentsId}`,
+      method: "POST",
+      data: {
+        lockPassword: value,
+      },
+    });
+    if (data) setData(data);
+    if (error?.response?.data) setErrorMessage(error?.response?.data);
     setIsLoading(false);
   };
 

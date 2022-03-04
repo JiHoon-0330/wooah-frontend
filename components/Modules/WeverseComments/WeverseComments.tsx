@@ -1,4 +1,7 @@
+import { memo } from "react";
+import useTranslate from "../../../hooks/useTranslate";
 import getArtistNameByWeverseId from "../../../services/artist/artistName";
+import { ArtistNameType } from "../../../types/artist";
 import {
   WeverseComment,
   WeverseGradeType,
@@ -24,7 +27,7 @@ const WeverseComments = ({ grade, comments }: WeverseCommentsProps) => {
           const artistName = getArtistNameByWeverseId(artistId);
           return (
             <Card key={props.createdAt} artistName={artistName}>
-              <WeverseContent {...props} />
+              <WeverseContent {...props} contentsType={"COMMENT_DETAIL"} />
             </Card>
           );
         })}
@@ -39,20 +42,18 @@ const WeverseComments = ({ grade, comments }: WeverseCommentsProps) => {
         return (
           <div key={key || index} className={styles.container}>
             {comment?.length &&
-              comment.map(
-                ({ artistId, body, createdAt, grade, profileNickname }) => {
-                  const artistName = getArtistNameByWeverseId(artistId);
-                  return (
-                    <Card key={createdAt} artistName={artistName}>
-                      <WeverseContent
-                        body={body}
-                        profileNickname={profileNickname}
-                        createdAt={createdAt}
-                      />
-                    </Card>
-                  );
-                },
-              )}
+              comment.map(({ artistId, createdAt, ...props }) => {
+                const artistName = getArtistNameByWeverseId(artistId);
+                return (
+                  <Card key={createdAt} artistName={artistName}>
+                    <WeverseContent
+                      {...props}
+                      createdAt={createdAt}
+                      contentsType={"COMMENT_DETAIL"}
+                    />
+                  </Card>
+                );
+              })}
           </div>
         );
       })}
@@ -60,4 +61,4 @@ const WeverseComments = ({ grade, comments }: WeverseCommentsProps) => {
   );
 };
 
-export default WeverseComments;
+export default memo(WeverseComments);
