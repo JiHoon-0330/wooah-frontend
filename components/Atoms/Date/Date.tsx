@@ -8,7 +8,7 @@ interface Props {
 
 const Date = ({ date }: Props) => {
   const formattedDate = getFormattedDate(date);
-  return <div className={styles.date}>{formattedDate}</div>;
+  return <span className={styles.date}>{formattedDate} </span>;
 };
 
 export default memo(Date);

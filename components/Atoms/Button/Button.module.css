@@ -1,11 +1,11 @@
 .button {
   padding: 5rem 10rem;
-  background-color: rgba(209, 213, 219, 1);
+  background-color: rgba(203, 208, 214, 0.7);
   border-radius: var(--rounded-sm);
-  font-size: 13rem;
-  font-weight: 500;
-  transition: all 0.1s linear;
+  font-size: 14rem;
+  font-weight: 600;
+  transition: all 0.15s ease-in-out;
 }
 .button:hover {
-  background-color: rgb(193, 197, 202);
+  background-color: rgb(189, 192, 194, 1);
 }

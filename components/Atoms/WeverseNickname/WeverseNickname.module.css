@@ -1,4 +1,5 @@
 .nickname {
+  position: relative;
   font-size: 17rem;
-  font-weight: 600;
+  font-weight: 700;
 }
