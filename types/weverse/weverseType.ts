@@ -1,7 +1,7 @@
 export type WeverseArtistId = 109 | 110 | 111 | 112 | 113 | undefined;
 export type WeverseGradeType = "ARTIST" | "FAN";
 
-type WeverseContentsType =
+export type WeverseContentsType =
   | "POST"
   | "ARTIST_POST"
   | "TO_FANS"
@@ -11,6 +11,7 @@ type WeverseContentsType =
 export type WeverseMediaType = "VIDEO" | "PHOTO";
 
 export interface WeverseReturn {
+  id: number;
   contentsId: string;
   contentsType: WeverseContentsType;
   comments: WeverseComment[][] | WeverseComment[];
@@ -29,6 +30,7 @@ export interface WeverseReturn {
 }
 
 export interface WeverseComment {
+  id: number;
   body: string;
   createdAt: string;
   grade: WeverseGradeType;
