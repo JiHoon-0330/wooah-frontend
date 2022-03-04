@@ -36,33 +36,35 @@ const Weverse = () => {
         data?.pages?.map((page) => (
           <Fragment key={page.lastId}>
             {page?.data?.length &&
-              page?.data?.map(({ artistId, contentsId, ...props }, index) => {
-                const isLast = page.data.length === index + 1;
-                if (list.has(contentsId)) {
-                  if (!isLast) return null;
+              page?.data?.map(
+                ({ id, artistId, contentsId, ...props }, index) => {
+                  const isLast = page.data.length === index + 1;
+                  if (list.has(contentsId)) {
+                    if (!isLast) return null;
+                    return (
+                      <div
+                        className={`${styles.empty} ${styles.post}`}
+                        key={id}
+                        ref={ref}
+                      />
+                    );
+                  }
+                  list.add(contentsId);
+                  const artistName = getArtistNameByWeverseId(artistId);
                   return (
                     <div
-                      className={`${styles.empty} ${styles.post}`}
-                      key={props.createdAt}
-                      ref={ref}
-                    />
+                      className={styles.post}
+                      key={id}
+                      ref={isLast ? ref : null}
+                    >
+                      <WeversePost
+                        artistName={artistName}
+                        {...{ ...props, artistId, contentsId, id }}
+                      />
+                    </div>
                   );
-                }
-                list.add(contentsId);
-                const artistName = getArtistNameByWeverseId(artistId);
-                return (
-                  <div
-                    className={styles.post}
-                    key={props.createdAt}
-                    ref={isLast ? ref : null}
-                  >
-                    <WeversePost
-                      artistName={artistName}
-                      {...{ ...props, artistId, contentsId }}
-                    />
-                  </div>
-                );
-              })}
+                },
+              )}
           </Fragment>
         ))}
       {isCurLoading && <Loading />}
