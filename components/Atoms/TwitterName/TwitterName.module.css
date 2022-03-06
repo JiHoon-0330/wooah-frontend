@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.name {
+  flex: 1;
+  font-size: 17rem;
+  font-weight: 700;
+}
+.screen_name {
+  font-size: 15rem;
+  font-weight: 600;
+  color: rgba(107, 114, 128, 1);
+}
+
+.container > svg {
+  flex-shrink: 0;
+  margin-right: 5rem;
+  width: 20rem;
+  height: 20rem;
+}
+.container > svg > path {
+  fill: #536471;
+}

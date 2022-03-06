@@ -25,6 +25,8 @@ const NextImages = ({ images }: Props) => {
               layout="responsive"
               priority={true}
               loading="eager"
+              placeholder="blur"
+              blurDataURL="data:image/jpg"
             />
           </a>
         </Link>
