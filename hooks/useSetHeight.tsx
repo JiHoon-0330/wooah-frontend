@@ -6,9 +6,8 @@ const useSetHeight = () => {
 
   useEffect(() => {
     if (!window) return;
-
     document.documentElement.style.setProperty("--height", `${windowHeight}px`);
-  }, []);
+  }, [windowHeight]);
 };
 
 export default useSetHeight;

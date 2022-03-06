@@ -14,9 +14,7 @@ const useWindowSize = () => {
 
   useEffect(() => {
     if (!window) return;
-
     getSize();
-
     window.addEventListener("resize", func);
     return () => {
       window.removeEventListener("resize", func);
