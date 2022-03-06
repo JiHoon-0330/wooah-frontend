@@ -1,0 +1,5 @@
+.wrapper {
+  padding: 7rem;
+  border-radius: var(--rounded-default);
+  background-color: rgb(243, 244, 246);
+}

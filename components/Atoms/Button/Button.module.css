@@ -1,0 +1,11 @@
+.button {
+  padding: 5rem 10rem;
+  background-color: rgba(203, 208, 214, 0.7);
+  border-radius: var(--rounded-sm);
+  font-size: 14rem;
+  font-weight: 600;
+  transition: all 0.15s ease-in-out;
+}
+.button:hover {
+  background-color: rgb(189, 192, 194, 1);
+}

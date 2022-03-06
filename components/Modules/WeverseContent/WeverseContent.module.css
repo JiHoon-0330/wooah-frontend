@@ -1,0 +1,25 @@
+.wrapper > * {
+  margin-bottom: 10rem;
+}
+.wrapper > *:nth-last-child(1) {
+  margin-bottom: 0;
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.top > *:nth-child(1) {
+  flex: 1;
+  margin-right: 20rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+.top > *:nth-child(2) {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
