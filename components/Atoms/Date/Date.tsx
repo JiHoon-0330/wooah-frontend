@@ -3,7 +3,7 @@ import getFormattedDate from "../../../services/date/format";
 import styles from "./Date.module.css";
 
 interface Props {
-  date: string;
+  date: string | number;
 }
 
 const Date = ({ date }: Props) => {

@@ -1,5 +1,7 @@
-const Reels = () => {
-  return <div>reels</div>;
+import Reels from "../components/Templates/Reels/Reels";
+
+const ReelsPage = () => {
+  return <Reels />;
 };
 
-export default Reels;
+export default ReelsPage;

@@ -1,6 +1,6 @@
 const getFormattedValue = (value: number) => (value < 10 ? `0${value}` : value);
 
-const getFormattedDate = (date: string) => {
+const getFormattedDate = (date: string | number) => {
   const curDate = new Date(date);
   const yyyy = curDate.getFullYear();
   const MM = getFormattedValue(curDate.getMonth() + 1);

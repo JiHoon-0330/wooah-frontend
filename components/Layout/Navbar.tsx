@@ -2,10 +2,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "./Navbar.module.css";
 
-type Menu = "위버스" | "트위터" | "릴스" | "일정" | "블로그" | "설정";
+type Menu = "위버스" | "트위터" | "릴스";
+//  "일정" | "블로그" | "설정";
 
 const Navbar = () => {
-  const list: Menu[] = ["위버스", "트위터", "릴스", "일정", "블로그", "설정"];
+  const list: Menu[] = ["위버스", "트위터", "릴스"];
+  //  "일정", "블로그", "설정"];
 
   const router = useRouter();
 
@@ -15,9 +17,9 @@ const Navbar = () => {
     위버스: "/",
     트위터: "/twitter",
     릴스: "/reels",
-    일정: "/schedule",
-    블로그: "/blog",
-    설정: "/setting",
+    // 일정: "/schedule",
+    // 블로그: "/blog",
+    // 설정: "/setting",
   };
 
   return (

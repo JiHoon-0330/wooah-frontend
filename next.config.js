@@ -12,6 +12,14 @@ const nextConfig = {
   images: {
     domains: ["cdn-contents-web.weverse.io", "pbs.twimg.com"],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/instagram/:path*",
+        destination: `https://scontent.cdninstagram.com/:path*`,
+      },
+    ];
+  },
   pageExtensions: isProd ? ["stories.tsx", "tsx"] : ["tsx"],
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     const plugins = [
