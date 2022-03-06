@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-gap);
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.topContainer > *:nth-child(2) {
+  margin-right: var(--content-gap);
+}
+
+.nameContainer {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+.nameContainer > *:nth-child(1) {
+  flex: 1;
+  margin-right: var(--content-gap);
+}
+.nameContainer > *:nth-child(2) {
+  flex-shrink: 0;
+}
+
+.name {
+  text-decoration: none;
+  color: #000;
+}
+.name:hover {
+  text-decoration: underline;
+}

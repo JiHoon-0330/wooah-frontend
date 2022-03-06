@@ -9,6 +9,8 @@ const args: Parameters<Component>[0] = {
   body: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet eligendi nisi labore quidem quibusdam architecto natus, esse eveniet? Dolores obcaecati assumenda necessitatibus consectetur. Facere at eos, mollitia minus veritatis architecto.",
   createdAt: "2022.02.27 17:54",
   profileNickname: "닉네임",
+  contentsType: "ARTIST_POST",
+  id: 1,
 };
 
 export default {

@@ -51,7 +51,7 @@ const WeverseLockedContent = ({ contentsId, setData }: Props) => {
       },
     });
     if (data) setData(data);
-    if (error?.response?.data) setErrorMessage(error?.response?.data);
+    if (error?.response?.data) setErrorMessage(error?.response?.data?.data);
     setIsLoading(false);
   };
 
