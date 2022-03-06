@@ -1,7 +1,7 @@
 .post {
-  margin-bottom: 50rem;
+  margin-bottom: var(--card-gap);
 }
 
 .empty {
-  margin-top: -50rem;
+  margin-top: calc(var(--card-gap) * -1);
 }

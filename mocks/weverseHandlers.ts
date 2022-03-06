@@ -16,4 +16,12 @@ export const weverseHandlers = [
   weverseApi("GET WEVERSE_POST /weverse", (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(dataWeverse));
   }),
+
+  rest.get("/weverse/translation", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json({ translation: "번역된 데이터" }));
+  }),
+
+  rest.post("/post/:contentsId", (req, res, ctx) => {
+    return res(ctx.status(200));
+  }),
 ];

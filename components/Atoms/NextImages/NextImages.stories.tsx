@@ -15,10 +15,5 @@ const Template: ComponentStory<Component> = (args) => <NextImages {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  images: [images[0]],
-};
-
-export const Multiple = Template.bind({});
-Multiple.args = {
   images,
 };

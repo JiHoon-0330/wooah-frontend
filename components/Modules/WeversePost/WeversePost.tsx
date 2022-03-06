@@ -18,7 +18,7 @@ import customAxios from "../../../services/api/customAxios";
 
 interface Props extends WeverseContentProps {
   contentsId: string;
-  artistName: ArtistNameType;
+  artistName: ArtistNameType | "MEDIA";
   grade: WeverseCommentsProps["grade"];
   comments?: WeverseCommentsProps["comments"];
   isLocked?: boolean;

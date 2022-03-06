@@ -1,0 +1,9 @@
+.twitter__hashtag,
+.twitter__url {
+  text-decoration: none;
+  color: #1d98f0;
+}
+.twitter__hashtag:hover,
+.twitter__url:hover {
+  text-decoration: underline;
+}

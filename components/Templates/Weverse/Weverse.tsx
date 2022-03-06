@@ -17,6 +17,9 @@ const Weverse = () => {
     fetchNextPage,
   } = useCustomQuery({
     api: "GET WEVERSE_POST /weverse",
+    options: {
+      getNextPageParam: (lastPage) => lastPage.lastId ?? false,
+    },
   });
 
   const { ref } = useLastPostObserver(

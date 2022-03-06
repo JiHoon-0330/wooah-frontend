@@ -1,21 +1,11 @@
 import { useCallback, useRef } from "react";
-import { FetchNextPageOptions, InfiniteQueryObserverResult } from "react-query";
-import { WeverseReturn } from "../types/weverse/weverseType";
+import { FetchNextPageOptions } from "react-query";
 
 const useLastPostObserver = (
   isLoading: boolean,
   pageParams: any[],
   hasNextPage: boolean,
-  fetchNextPage: (options?: FetchNextPageOptions | undefined) => Promise<
-    InfiniteQueryObserverResult<
-      {
-        data: WeverseReturn[];
-        lastId: number;
-        hasMore: boolean;
-      },
-      unknown
-    >
-  >,
+  fetchNextPage: (options?: FetchNextPageOptions | undefined) => any,
 ) => {
   const observer = useRef<IntersectionObserver>();
   const ref = useCallback(

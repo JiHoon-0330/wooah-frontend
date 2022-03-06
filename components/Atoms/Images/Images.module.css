@@ -1,0 +1,12 @@
+.images {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.images > a {
+  display: flex;
+}
+.image {
+  width: 100%;
+  border-radius: var(--rounded-default);
+}
