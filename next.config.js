@@ -9,7 +9,9 @@ const nextConfig = {
   compiler: {
     removeConsole: isProd,
   },
-  images: { domains: ["cdn-contents-web.weverse.io"] },
+  images: {
+    domains: ["cdn-contents-web.weverse.io", "pbs.twimg.com"],
+  },
   pageExtensions: isProd ? ["stories.tsx", "tsx"] : ["tsx"],
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     const plugins = [
