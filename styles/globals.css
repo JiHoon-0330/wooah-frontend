@@ -1,7 +1,11 @@
 @import "./colors.css";
+@import "./text.css";
+@import "./twitter.css";
+
 :root {
   --max-width: 600px;
   --height: calc(100vh);
+  --card-gap: 50rem;
   --content-gap: 15rem;
   --rounded-default: 10rem;
   --rounded-sm: 5rem;
@@ -39,10 +43,4 @@ button {
   margin: 0;
   box-sizing: border-box;
   outline: none;
-  -ms-overflow-style: none !important;
-  scrollbar-width: none !important;
-}
-
-*::-webkit-scrollbar {
-  display: none;
 }
