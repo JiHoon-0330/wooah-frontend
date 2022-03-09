@@ -1,0 +1,9 @@
+.card {
+  border-radius: var(--rounded-default);
+  padding: 13rem;
+  display: flex;
+  flex-direction: column;
+}
+.card.default {
+  font-weight: 500;
+}

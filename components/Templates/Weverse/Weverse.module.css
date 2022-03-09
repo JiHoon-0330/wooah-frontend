@@ -1,0 +1,7 @@
+.post {
+  margin-bottom: var(--card-gap);
+}
+
+.empty {
+  margin-top: calc(var(--card-gap) * -1);
+}

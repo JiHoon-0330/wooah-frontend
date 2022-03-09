@@ -1,5 +1,4 @@
 const CompressionPlugin = require("compression-webpack-plugin");
-
 const isProd = process.env.NODE_ENV === "production";
 
 /** @type {import('next').NextConfig} */
@@ -10,12 +9,32 @@ const nextConfig = {
   compiler: {
     removeConsole: isProd,
   },
+  images: {
+    domains: ["cdn-contents-web.weverse.io", "pbs.twimg.com"],
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/instagram/:path*",
+        destination: `https://scontent.cdninstagram.com/:path*`,
+      },
+    ];
+  },
   pageExtensions: isProd ? ["stories.tsx", "tsx"] : ["tsx"],
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     const plugins = [
       ...config.plugins,
       new webpack.IgnorePlugin({
         resourceRegExp: /.*\.test(\.).*(ts|tsx)$/,
+      }),
+      new webpack.DefinePlugin({
+        "process.env": {
+          BUILD_ID: JSON.stringify(buildId),
+          STORYBOOK: JSON.stringify("false"),
+          API_DOMAIN: JSON.stringify(
+            isProd ? "https://api.wooah.shop" : "http://localhost:3000",
+          ),
+        },
       }),
     ];
 
