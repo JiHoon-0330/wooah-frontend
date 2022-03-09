@@ -53,7 +53,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["autoprefixer", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:10.4.2"],\
             ["axios", "npm:0.26.0"],\
             ["babel-loader", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:8.2.3"],\
-            ["chromatic", "npm:6.5.1"],\
             ["compression-webpack-plugin", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:9.2.0"],\
             ["cross-env", "npm:7.0.3"],\
             ["eslint", "npm:8.9.0"],\
@@ -11716,15 +11715,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/chownr-npm-2.0.0-638f1c9c61-c57cf9dd07.zip/node_modules/chownr/",\
           "packageDependencies": [\
             ["chownr", "npm:2.0.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["chromatic", [\
-        ["npm:6.5.1", {\
-          "packageLocation": "./.yarn/cache/chromatic-npm-6.5.1-89d03eb673-7396331bdd.zip/node_modules/chromatic/",\
-          "packageDependencies": [\
-            ["chromatic", "npm:6.5.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -25182,7 +25172,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["autoprefixer", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:10.4.2"],\
             ["axios", "npm:0.26.0"],\
             ["babel-loader", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:8.2.3"],\
-            ["chromatic", "npm:6.5.1"],\
             ["compression-webpack-plugin", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:9.2.0"],\
             ["cross-env", "npm:7.0.3"],\
             ["eslint", "npm:8.9.0"],\
