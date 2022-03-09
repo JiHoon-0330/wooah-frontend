@@ -7,6 +7,20 @@ import Layout from "../components/Layout/Layout";
 import useSetHeight from "../hooks/useSetHeight";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  // if (typeof window === "undefined") {
+  //   (async () => {
+  //     const { server } = await import("../mocks/server");
+  //     server.listen();
+  //     console.log(`server`);
+  //   })();
+  // } else {
+  //   (async () => {
+  //     const { worker } = await import("../mocks/browser");
+  //     worker.start();
+  //     console.log(`worker`);
+  //   })();
+  // }
+
   const queryClientRef = useRef<QueryClient>();
   if (!queryClientRef.current) {
     queryClientRef.current = new QueryClient();

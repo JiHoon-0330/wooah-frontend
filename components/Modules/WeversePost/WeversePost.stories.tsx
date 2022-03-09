@@ -4,7 +4,6 @@ import dataAttachedVideos from "../../../data/weverse/dataAttachedVideos";
 import dataComments from "../../../data/weverse/dataComments";
 import dataLockedPost from "../../../data/weverse/dataLockedPost";
 import dataPhotos from "../../../data/weverse/dataPhotos";
-import useWorker from "../../../mocks/useWorker";
 import WeversePost from "./WeversePost";
 
 type Component = typeof WeversePost;
@@ -44,29 +43,23 @@ const lockedArgs = {
 
 export const LockedSuccess = Template.bind({});
 LockedSuccess.args = lockedArgs;
-LockedSuccess.decorators = [
-  (story) => {
-    useWorker(
-      rest.post("/weverse/post/:contentsId", (req, res, ctx) => {
-        return res(ctx.status(200), ctx.json(dataLockedPost));
-      }),
-    );
-    return story();
-  },
-];
+LockedSuccess.parameters = {
+  msw: [
+    rest.post("/weverse/post/:contentsId", (req, res, ctx) => {
+      return res(ctx.status(200), ctx.json(dataLockedPost));
+    }),
+  ],
+};
 
 export const LockedFail = Template.bind({});
 LockedFail.args = lockedArgs;
-LockedFail.decorators = [
-  (story) => {
-    useWorker(
-      rest.post("/weverse/post/:contentsId", (req, res, ctx) => {
-        return res(ctx.status(400), ctx.json({ data: "비밀번호 오류" }));
-      }),
-    );
-    return story();
-  },
-];
+LockedFail.parameters = {
+  msw: [
+    rest.post("/weverse/post/:contentsId", (req, res, ctx) => {
+      return res(ctx.status(400), ctx.json({ data: "비밀번호 오류" }));
+    }),
+  ],
+};
 
 export const Images = Template.bind({});
 Images.args = {

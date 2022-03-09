@@ -6,7 +6,7 @@ interface Props {
   type: "error" | "warn";
 }
 
-const Message = ({ message, type }: Props) => {
+const Message = ({ message, type = "warn" }: Props) => {
   return <p className={`${styles[type]} ${styles.message}`}>{message}</p>;
 };
 
