@@ -1,5 +1,6 @@
 const CompressionPlugin = require("compression-webpack-plugin");
 const isProd = process.env.NODE_ENV === "production";
+const isTest = process.env.TEST === "true";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -32,7 +33,9 @@ const nextConfig = {
           BUILD_ID: JSON.stringify(buildId),
           STORYBOOK: JSON.stringify("false"),
           API_DOMAIN: JSON.stringify(
-            isProd ? "https://api.wooah.shop" : "http://localhost:3000",
+            isProd || isTest
+              ? "https://api.wooah.shop"
+              : "http://localhost:3000",
           ),
         },
       }),
