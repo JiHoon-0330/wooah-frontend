@@ -2,6 +2,7 @@
   position: sticky;
   bottom: 0;
   width: 100%;
+  padding-bottom: env(safe-area-inset-bottom);
   background-color: #fff;
   box-shadow: 0rem -1rem 0rem rgba(34, 34, 34, 0.2);
   display: flex;
