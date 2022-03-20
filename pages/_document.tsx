@@ -5,6 +5,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
+import Pwa from "../components/Tags/Pwa";
 import HtmlHead from "../Documents/HtmlHead/HtmlHead";
 
 class MyDocument extends Document {
@@ -18,6 +19,7 @@ class MyDocument extends Document {
       <Html lang="ko">
         <Head>
           <HtmlHead />
+          <Pwa />
         </Head>
         <body>
           <Main />
