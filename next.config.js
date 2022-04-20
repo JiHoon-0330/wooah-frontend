@@ -21,7 +21,7 @@ const nextConfig = {
       },
     ];
   },
-  pageExtensions: isProd ? ["stories.tsx", "tsx"] : ["tsx"],
+  pageExtensions: isProd ? ["stories.tsx", "tsx", "ts"] : ["tsx", "ts"],
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     const plugins = [
       ...config.plugins,
