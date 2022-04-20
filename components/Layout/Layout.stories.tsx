@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+import dataWeverse from '../../data/weverse/dataWeverse';
 import WeverseTemplate from "../Templates/Weverse/Weverse";
 import Layout from "./Layout";
 
@@ -15,5 +16,5 @@ const Template: ComponentStory<Component> = ({ children, ...args }) => (
 
 export const Weverse = Template.bind({});
 Weverse.args = {
-  children: <WeverseTemplate />,
+  children: <WeverseTemplate initialData={dataWeverse} />,
 };

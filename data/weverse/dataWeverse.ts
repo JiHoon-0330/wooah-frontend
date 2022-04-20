@@ -515,4 +515,4 @@ export default {
   ],
   lastId: 1685711933483589,
   hasMore: true,
-} as { data: WeverseReturn[]; lastId: number | null; hasMore: boolean };
+} as { data: WeverseReturn[]; lastId: number; hasMore: boolean };

@@ -10,7 +10,7 @@ export default {
   component: Weverse,
 } as ComponentMeta<Component>;
 
-const Template: ComponentStory<Component> = (args) => <Weverse />;
+const Template: ComponentStory<Component> = (args) => <Weverse initialData={dataWeverse}/>;
 
 export const Default = Template.bind({});
 Default.parameters = {

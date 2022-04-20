@@ -2,12 +2,19 @@ import { Fragment } from "react";
 import useCustomQuery from "../../../hooks/useCustomQuery";
 import useLastPostObserver from "../../../hooks/useLastPostObserver";
 import getArtistNameByWeverseId from "../../../services/artist/artistName";
+import { WeverseReturn } from '../../../types/weverse/weverseType';
 import Loading from "../../Atoms/Loading/Loading";
 import Message from "../../Atoms/Message/Message";
 import WeversePost from "../../Modules/WeversePost/WeversePost";
 import styles from "./Weverse.module.css";
 
-const Weverse = () => {
+interface Props{
+  initialData:{ data: WeverseReturn[]; lastId: number; hasMore: boolean }
+}
+
+const Weverse = (
+  {initialData}:Props
+  ) => {
   const {
     data,
     error,
@@ -20,6 +27,7 @@ const Weverse = () => {
     options: {
       getNextPageParam: (lastPage) => lastPage.lastId ?? false,
     },
+    initialData
   });
 
   const { ref } = useLastPostObserver(
