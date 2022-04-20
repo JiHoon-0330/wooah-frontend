@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import type { AppProps } from "next/app";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
@@ -20,17 +20,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   //     console.log(`worker`);
   //   })();
   // }
-
-  const queryClientRef = useRef<QueryClient>();
-  if (!queryClientRef.current) {
-    queryClientRef.current = new QueryClient();
-  }
+  const [client] = useState(()=> new QueryClient())
 
   useSetHeight();
 
   return (
     <>
-      <QueryClientProvider client={queryClientRef.current}>
+      <QueryClientProvider client={client}>
         <Hydrate state={pageProps.dehydratedState}>
           <Layout>
             <Component {...pageProps} />

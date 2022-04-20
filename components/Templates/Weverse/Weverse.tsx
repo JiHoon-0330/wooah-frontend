@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, Suspense } from "react";
 import useCustomQuery from "../../../hooks/useCustomQuery";
 import useLastPostObserver from "../../../hooks/useLastPostObserver";
 import getArtistNameByWeverseId from "../../../services/artist/artistName";
@@ -8,13 +8,7 @@ import Message from "../../Atoms/Message/Message";
 import WeversePost from "../../Modules/WeversePost/WeversePost";
 import styles from "./Weverse.module.css";
 
-interface Props{
-  initialData:{ data: WeverseReturn[]; lastId: number; hasMore: boolean }
-}
-
-const Weverse = (
-  {initialData}:Props
-  ) => {
+const Weverse = () => {
   const {
     data,
     error,
@@ -25,9 +19,8 @@ const Weverse = (
   } = useCustomQuery({
     api: "GET WEVERSE_POST /weverse",
     options: {
-      getNextPageParam: (lastPage) => lastPage.lastId ?? false,
+      getNextPageParam: (lastPage,pages) => lastPage.lastId ?? false,
     },
-    initialData
   });
 
   const { ref } = useLastPostObserver(
@@ -36,12 +29,20 @@ const Weverse = (
     hasNextPage!,
     fetchNextPage,
   );
+  console.log(
+    data,
+error,
+isLoading,
+hasNextPage,
+isFetchingNextPage,
+  )
 
   const list = new Set<string>();
 
   const isCurLoading = isLoading || isFetchingNextPage;
 
   return (
+    <Suspense fallback={<Loading/>}>
     <>
       {!!data?.pages?.length &&
         data?.pages?.map((page) => (
@@ -86,6 +87,7 @@ const Weverse = (
         <Message type="warn" message="데이터가 없습니다." />
       )}
     </>
+    </Suspense>
   );
 };
 
