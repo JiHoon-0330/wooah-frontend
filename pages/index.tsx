@@ -1,5 +1,5 @@
 import Weverse from "../components/Templates/Weverse/Weverse";
-import apiAxios from '../services/api/axios';
+import apiAxios from "../services/api/axios";
 import { dehydrate, QueryClient } from "react-query";
 
 export async function getStaticProps() {
@@ -16,8 +16,10 @@ export async function getStaticProps() {
   );
 
   return {
-    props:{dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),}
-  }
+    props: {
+      dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
+    },
+  };
 }
 
 const HomePage = () => {

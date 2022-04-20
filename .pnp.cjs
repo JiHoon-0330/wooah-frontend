@@ -70,6 +70,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-query", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:3.34.16"],\
             ["storybook-addon-next-router", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:3.1.1"],\
             ["storybook-css-modules-preset", "npm:1.1.1"],\
+            ["swr", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:1.3.0"],\
             ["ts-jest", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:27.1.3"],\
             ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=bda367"]\
           ],\
@@ -24640,6 +24641,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["swr", [\
+        ["npm:1.3.0", {\
+          "packageLocation": "./.yarn/cache/swr-npm-1.3.0-3a8f9fadf5-e7a184f0d5.zip/node_modules/swr/",\
+          "packageDependencies": [\
+            ["swr", "npm:1.3.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:1.3.0", {\
+          "packageLocation": "./.yarn/__virtual__/swr-virtual-3ae34093d8/0/cache/swr-npm-1.3.0-3a8f9fadf5-e7a184f0d5.zip/node_modules/swr/",\
+          "packageDependencies": [\
+            ["swr", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:1.3.0"],\
+            ["@types/react", "npm:17.0.39"],\
+            ["react", "npm:18.0.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["symbol-tree", [\
         ["npm:3.2.4", {\
           "packageLocation": "./.yarn/cache/symbol-tree-npm-3.2.4-fe70cdb75b-6e8fc7e148.zip/node_modules/symbol-tree/",\
@@ -26534,6 +26557,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-query", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:3.34.16"],\
             ["storybook-addon-next-router", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:3.1.1"],\
             ["storybook-css-modules-preset", "npm:1.1.1"],\
+            ["swr", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:1.3.0"],\
             ["ts-jest", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:27.1.3"],\
             ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=bda367"]\
           ],\

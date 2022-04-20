@@ -6,5 +6,6 @@
   "eslint.nodePath": ".yarn/sdks",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "prettier.configPath": "C:\\Users\\jihoon\\.prettierrc"
+  "prettier.configPath": "",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
