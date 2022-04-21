@@ -1,8 +1,9 @@
 import Weverse from "../components/Templates/Weverse/Weverse";
 import apiAxios from "../services/api/axios";
 import { dehydrate, QueryClient } from "react-query";
+import { GetStaticProps } from "next";
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchInfiniteQuery(
@@ -19,8 +20,9 @@ export async function getStaticProps() {
     props: {
       dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
     },
+    revalidate: 5,
   };
-}
+};
 
 const HomePage = () => {
   return <Weverse />;
