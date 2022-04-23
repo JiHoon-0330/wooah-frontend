@@ -20,14 +20,7 @@ const NextImages = ({ images }: Props) => {
       {images.map(({ origin, ...props }) => (
         <Link key={origin} href={origin}>
           <a target="_blank">
-            <Image
-              {...props}
-              layout="responsive"
-              priority={true}
-              loading="eager"
-              placeholder="blur"
-              blurDataURL="data:image/jpg"
-            />
+            <Image {...props} layout="intrinsic" loading="lazy" />
           </a>
         </Link>
       ))}

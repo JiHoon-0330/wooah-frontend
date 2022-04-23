@@ -2,8 +2,8 @@ import { Array, ObjectType } from "../../types/global";
 
 const getValidUrl = (
   uri: string,
-  query: ObjectType | undefined,
-  valid: Array,
+  query: ObjectType | undefined = undefined,
+  valid: Array = [],
 ): string | null => {
   const defaultResult = {
     uri,

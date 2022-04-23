@@ -1,3 +1,4 @@
+@import "./fonts/fonts.css";
 @import "./colors.css";
 @import "./text.css";
 @import "./twitter.css";
@@ -19,7 +20,7 @@ body,
 
 html {
   font-size: 6.25%;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "NotoSansKR", sans-serif;
   word-break: break-all;
   background-color: rgb(241, 241, 241);
   color: #000;

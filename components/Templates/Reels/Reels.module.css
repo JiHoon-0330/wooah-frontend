@@ -1,3 +1,7 @@
 .post {
   margin-bottom: 50rem;
 }
+
+.post video {
+  min-height: 600rem;
+}

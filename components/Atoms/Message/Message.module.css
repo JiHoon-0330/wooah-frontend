@@ -1,6 +1,6 @@
 .message {
   font-size: 15rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 .message.error {
   color: rgb(221, 40, 40);

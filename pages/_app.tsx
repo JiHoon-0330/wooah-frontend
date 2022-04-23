@@ -23,9 +23,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   // }
   const [client] = useState(() => new QueryClient());
 
-  const swrConfig = useMemo(
+  const swrConfig: Parameters<typeof SWRConfig>[0]["value"] = useMemo(
     () => ({
       fallback: pageProps.fallback,
+      dedupingInterval: 30000,
     }),
     [pageProps.fallback],
   );

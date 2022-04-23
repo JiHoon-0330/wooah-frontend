@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "cross-env next dev -p 3030",
-    "dev:test": "cross-env TEST=true next dev -p 3030",
+    "dev:test": "cross-env TEST=true SSG=false next dev -p 3030",
     "build": "cross-env next build",
     "start": "cross-env next start",
+    "start:build": "cross-env next build && next start",
     "storybook": "cross-env BROWSER=none start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest",

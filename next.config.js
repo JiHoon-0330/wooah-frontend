@@ -10,6 +10,9 @@ const nextConfig = {
   compiler: {
     removeConsole: isProd,
   },
+  experimental: {
+    workerThreads: true,
+  },
   images: {
     domains: ["cdn-contents-web.weverse.io", "pbs.twimg.com"],
   },

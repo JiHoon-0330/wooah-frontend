@@ -1,28 +1,17 @@
+import { GetStaticProps } from "next";
 import Twitter from "../components/Templates/Twitter/Twitter";
-// import { dehydrate, QueryClient } from "react-query";
-// import apiAxios from "../services/api/axios";
+import { ssrReactQuery } from "../services/data-fetch/staticProps";
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      dehydratedState: await ssrReactQuery("GET TWITTER_POST /twitter"),
+    },
+  };
+};
 
 const TwitterPage = () => {
   return <Twitter />;
 };
-
-// export async function getServerSideProps() {
-//   const queryClient = new QueryClient();
-//   await queryClient.prefetchInfiniteQuery(
-//     "GET TWITTER_POST /twitter",
-//     async () => {
-//       const { data } = await apiAxios({
-//         url: "/twitter",
-//       });
-//       return data;
-//     },
-//   );
-
-//   return {
-//     props: {
-//       dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
-//     },
-//   };
-// }
 
 export default TwitterPage;

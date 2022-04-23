@@ -5,7 +5,7 @@ const useSetHeight = () => {
   const { windowHeight } = useWindowSize();
 
   useEffect(() => {
-    if (!window) return;
+    if (!window || !windowHeight) return;
     document.documentElement.style.setProperty("--height", `${windowHeight}px`);
   }, [windowHeight]);
 };

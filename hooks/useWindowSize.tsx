@@ -6,8 +6,9 @@ const useWindowSize = () => {
   const [windowHeight, setWindowHeight] = useState(0);
 
   const getSize = () => {
-    setWindowWidth(window.innerWidth);
-    setWindowHeight(window.innerHeight);
+    const { innerWidth, innerHeight } = window;
+    setWindowWidth(innerWidth);
+    setWindowHeight(innerHeight);
   };
 
   const func = useDebounce(getSize, 500);
@@ -20,7 +21,6 @@ const useWindowSize = () => {
       window.removeEventListener("resize", func);
     };
   }, []);
-
   return { windowWidth, windowHeight };
 };
 
