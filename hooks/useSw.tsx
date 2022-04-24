@@ -8,6 +8,7 @@ const useSw = () => {
           "Service Worker registration successful with scope: ",
           registration.scope,
         );
+        // registration.active?.postMessage("clear old cache");
       },
       (err) => {
         console.log("Service Worker registration failed: ", err);

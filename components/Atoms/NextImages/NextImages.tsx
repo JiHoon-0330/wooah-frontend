@@ -25,7 +25,9 @@ const NextImages = ({ images }: Props) => {
               layout="intrinsic"
               loading="lazy"
               placeholder="blur"
-              blurDataURL={`/_next/image?url=${props.src}&q=15`}
+              blurDataURL={`/_next/image?url=${encodeURIComponent(
+                props.src,
+              )}&w=1&q=15`}
             />
           </a>
         </Link>

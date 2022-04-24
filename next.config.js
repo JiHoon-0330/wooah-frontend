@@ -15,6 +15,8 @@ const nextConfig = {
   },
   images: {
     domains: ["cdn-contents-web.weverse.io", "pbs.twimg.com"],
+    deviceSizes: [320, 375, 425],
+    imageSizes: [1, 270, 315, 360, 520],
   },
   async rewrites() {
     return [
