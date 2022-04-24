@@ -7,6 +7,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       dehydratedState: await ssrReactQuery("GET REELS_POST /instagram/reels"),
     },
+    revalidate: 60,
   };
 };
 
