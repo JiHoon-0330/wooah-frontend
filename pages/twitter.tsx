@@ -7,6 +7,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       dehydratedState: await ssrReactQuery("GET TWITTER_POST /twitter"),
     },
+    revalidate: 60,
   };
 };
 
