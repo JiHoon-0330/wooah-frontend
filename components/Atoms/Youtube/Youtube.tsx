@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import styles from "./Youtube.module.css";
 
 interface Props {
@@ -6,19 +6,11 @@ interface Props {
 }
 
 const Youtube = ({ youtubeId }: Props) => {
-  const [id, setId] = useState<string>();
-
-  useEffect(() => {
-    setId(youtubeId);
-  }, [youtubeId]);
-
-  if (!id) return null;
-
   return (
     <div className={styles.youtube}>
       <iframe
-        id={id}
-        src={`https://www.youtube.com/embed/${id}`}
+        id={youtubeId}
+        src={`https://www.youtube.com/embed/${youtubeId}`}
         frameBorder="0"
         width="560"
         height="315"
