@@ -1,4 +1,3 @@
-import { Suspense, useEffect, useState } from "react";
 import styles from "./Youtube.module.css";
 
 interface Props {
@@ -6,6 +5,8 @@ interface Props {
 }
 
 const Youtube = ({ youtubeId }: Props) => {
+  if (!youtubeId) return null;
+
   return (
     <div className={styles.youtube}>
       <iframe
