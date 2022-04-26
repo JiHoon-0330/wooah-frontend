@@ -12,6 +12,7 @@ const Youtube = ({ youtubeId }: Props) => {
   return (
     <div className={styles.youtube}>
       <iframe
+        id={youtubeId}
         src={`https://www.youtube.com/embed/${youtubeId}`}
         frameBorder="0"
         width="560"
