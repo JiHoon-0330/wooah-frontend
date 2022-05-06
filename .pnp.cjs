@@ -72,6 +72,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["storybook-css-modules-preset", "npm:1.1.1"],\
             ["swr", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:1.3.0"],\
             ["ts-jest", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:27.1.3"],\
+            ["twemoji", "npm:14.0.2"],\
             ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=bda367"]\
           ],\
           "linkType": "SOFT"\
@@ -16112,6 +16113,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
+        ["npm:8.1.0", {\
+          "packageLocation": "./.yarn/cache/fs-extra-npm-8.1.0-197473387f-bf44f0e6ce.zip/node_modules/fs-extra/",\
+          "packageDependencies": [\
+            ["fs-extra", "npm:8.1.0"],\
+            ["graceful-fs", "npm:4.2.9"],\
+            ["jsonfile", "npm:4.0.0"],\
+            ["universalify", "npm:0.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:9.1.0", {\
           "packageLocation": "./.yarn/cache/fs-extra-npm-9.1.0-983c2ddb4c-ba71ba32e0.zip/node_modules/fs-extra/",\
           "packageDependencies": [\
@@ -19055,6 +19066,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["jsonfile", "npm:2.4.0"],\
             ["graceful-fs", "npm:4.2.9"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:4.0.0", {\
+          "packageLocation": "./.yarn/cache/jsonfile-npm-4.0.0-10ce3aea15-6447d6224f.zip/node_modules/jsonfile/",\
+          "packageDependencies": [\
+            ["jsonfile", "npm:4.0.0"],\
+            ["graceful-fs", "npm:4.2.9"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:5.0.0", {\
+          "packageLocation": "./.yarn/cache/jsonfile-npm-5.0.0-be63f5e054-e0ecff572d.zip/node_modules/jsonfile/",\
+          "packageDependencies": [\
+            ["jsonfile", "npm:5.0.0"],\
+            ["graceful-fs", "npm:4.2.9"],\
+            ["universalify", "npm:0.1.2"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -25319,6 +25347,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["twemoji", [\
+        ["npm:14.0.2", {\
+          "packageLocation": "./.yarn/cache/twemoji-npm-14.0.2-bd5648dce6-686a356a7a.zip/node_modules/twemoji/",\
+          "packageDependencies": [\
+            ["twemoji", "npm:14.0.2"],\
+            ["fs-extra", "npm:8.1.0"],\
+            ["jsonfile", "npm:5.0.0"],\
+            ["twemoji-parser", "npm:14.0.0"],\
+            ["universalify", "npm:0.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["twemoji-parser", [\
+        ["npm:14.0.0", {\
+          "packageLocation": "./.yarn/cache/twemoji-parser-npm-14.0.0-9cf535117a-8eede69cf7.zip/node_modules/twemoji-parser/",\
+          "packageDependencies": [\
+            ["twemoji-parser", "npm:14.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["type-check", [\
         ["npm:0.3.2", {\
           "packageLocation": "./.yarn/cache/type-check-npm-0.3.2-a4a38bb0b6-dd3b149564.zip/node_modules/type-check/",\
@@ -26559,6 +26609,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["storybook-css-modules-preset", "npm:1.1.1"],\
             ["swr", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:1.3.0"],\
             ["ts-jest", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:27.1.3"],\
+            ["twemoji", "npm:14.0.2"],\
             ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=bda367"]\
           ],\
           "linkType": "SOFT"\

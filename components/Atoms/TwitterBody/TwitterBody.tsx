@@ -1,3 +1,4 @@
+import useTwemoji from "../../../hooks/useTwemoji";
 import styles from "./TwitterBody.module.css";
 
 interface Props {
@@ -5,8 +6,14 @@ interface Props {
 }
 
 const TwitterBody = ({ body }: Props) => {
+  const ref = useTwemoji(body);
+
   return (
-    <div className={styles.body} dangerouslySetInnerHTML={{ __html: body }} />
+    <div
+      ref={ref}
+      className={styles.body}
+      dangerouslySetInnerHTML={{ __html: body }}
+    />
   );
 };
 

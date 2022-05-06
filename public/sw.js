@@ -1,5 +1,6 @@
 const FONT_CACHE = "FONT_CACHE";
 const NEXT_IMAGE = "NEXT_IMAGE";
+const TWEMOJI = "TWEMOJI";
 
 const fonts = [
   "/fonts/NotoSansKR/NotoSansKR-Bold.otf",
@@ -7,8 +8,6 @@ const fonts = [
   "/fonts/NotoSansKR/NotoSansKR-Medium.otf",
   "/fonts/NotoSansKR/NotoSansKR-Regular.otf",
 ];
-
-const timer = {};
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
@@ -34,8 +33,8 @@ const saveCache = async (cache, request) => {
   }
 };
 
-const getNextImage = async (request) => {
-  const cache = await caches.open(NEXT_IMAGE);
+const getCache = async (request, cacheName) => {
+  const cache = await caches.open(cacheName);
   const match = await cache.match(request);
 
   if (match) {
@@ -46,23 +45,24 @@ const getNextImage = async (request) => {
 
 const getIsUrlMatch = (url) => (pattern) => url.includes(pattern);
 
-self.addEventListener("fetch", (event) => {
-  const {
-    request,
-    request: { url, method },
-  } = event;
+const getCacheByRequest = async (request) => {
+  const { url } = request;
   const isUrlMatch = getIsUrlMatch(url);
 
-  event.respondWith(
-    (async () => {
-      switch (true) {
-        case isUrlMatch("/fonts/"):
-          return await getFonts(url);
-        case isUrlMatch("/_next/image"):
-          return await getNextImage(request);
-        default:
-          return await fetch(request);
-      }
-    })(),
-  );
+  switch (true) {
+    case isUrlMatch("/fonts/"):
+      return await getFonts(url);
+    case isUrlMatch("/_next/image"):
+      return await getCache(request, NEXT_IMAGE);
+    case isUrlMatch("twemoji.maxcdn.com"):
+      return await getCache(request, TWEMOJI);
+    default:
+      return await fetch(request);
+  }
+};
+
+self.addEventListener("fetch", async (event) => {
+  const { request } = event;
+
+  event.respondWith(getCacheByRequest(request));
 });

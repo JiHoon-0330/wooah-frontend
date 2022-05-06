@@ -49,3 +49,5 @@ storybook-snapshots
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+.idea

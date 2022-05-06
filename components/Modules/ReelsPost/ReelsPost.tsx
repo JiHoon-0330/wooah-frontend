@@ -1,3 +1,4 @@
+import useTwemoji from "../../../hooks/useTwemoji";
 import { Reels } from "../../../types/reels/reels";
 import { API_DOMAIN } from "../../../utils/env";
 import Card from "../../Atoms/Card/Card";
@@ -6,6 +7,8 @@ import Medias from "../../Atoms/Media/Medias";
 import styles from "./Reels.module.css";
 
 const ReelsPost = ({ body, createdAt, poster, src }: Reels) => {
+  const ref = useTwemoji(body);
+
   const formattedBody = body.replace(/#[^\s#]+/g, (tag) => {
     return `<a class="twitter__hashtag" href=https://www.instagram.com/explore/tags/${tag.slice(
       1,
@@ -32,6 +35,7 @@ const ReelsPost = ({ body, createdAt, poster, src }: Reels) => {
         />
         <div className={styles.container}>
           <div
+            ref={ref}
             className={styles.body}
             dangerouslySetInnerHTML={{ __html: formattedBody }}
           />

@@ -1,4 +1,5 @@
 import { memo } from "react";
+import useTwemoji from "../../../hooks/useTwemoji";
 import styles from "./WeverseNickname.module.css";
 
 interface Props {
@@ -6,7 +7,12 @@ interface Props {
 }
 
 const WeverseNickname = ({ nickname }: Props) => {
-  return <span className={styles.nickname}>[{nickname}]</span>;
+  const ref = useTwemoji(nickname);
+  return (
+    <span ref={ref} className={styles.nickname}>
+      [{nickname}]
+    </span>
+  );
 };
 
 export default memo(WeverseNickname);
