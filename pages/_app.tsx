@@ -1,11 +1,10 @@
 import "../styles/globals.css";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import type { AppProps } from "next/app";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import Layout from "../components/Layout/Layout";
 import useSetHeight from "../hooks/useSetHeight";
-import { SWRConfig } from "swr";
 
 function MyApp({ Component, pageProps }: AppProps) {
   // if (typeof window === "undefined") {
@@ -23,25 +22,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   // }
   const [client] = useState(() => new QueryClient());
 
-  const swrConfig: Parameters<typeof SWRConfig>[0]["value"] = useMemo(
-    () => ({
-      fallback: pageProps.fallback,
-      dedupingInterval: 30000,
-    }),
-    [pageProps.fallback],
-  );
-
   useSetHeight();
 
   return (
     <>
       <QueryClientProvider client={client}>
         <Hydrate state={pageProps.dehydratedState}>
-          <SWRConfig value={swrConfig}>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </SWRConfig>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </Hydrate>
         <ReactQueryDevtools />
       </QueryClientProvider>
