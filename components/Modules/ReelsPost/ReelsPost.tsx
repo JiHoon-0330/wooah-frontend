@@ -1,3 +1,4 @@
+import { memo, useMemo } from "react";
 import useTwemoji from "../../../hooks/useTwemoji";
 import { Reels } from "../../../types/reels/reels";
 import { API_DOMAIN } from "../../../utils/env";
@@ -24,14 +25,18 @@ const ReelsPost = ({ body, createdAt, poster, src }: Reels) => {
     <Card artistName="default">
       <div className={styles.wrapper}>
         <Medias
-          medias={[
-            {
-              poster: proxyUrl(poster),
-              src: `${API_DOMAIN}/instagram/video?url=${encodeURIComponent(
-                src,
-              )}&createdAt=${createdAt}`,
-            },
-          ]}
+          type="reels"
+          medias={useMemo(
+            () => [
+              {
+                poster: proxyUrl(poster),
+                src: `${API_DOMAIN}/instagram/video?url=${encodeURIComponent(
+                  src,
+                )}&createdAt=${createdAt}`,
+              },
+            ],
+            [poster, src, createdAt],
+          )}
         />
         <div className={styles.container}>
           <div
@@ -46,4 +51,4 @@ const ReelsPost = ({ body, createdAt, poster, src }: Reels) => {
   );
 };
 
-export default ReelsPost;
+export default memo(ReelsPost);

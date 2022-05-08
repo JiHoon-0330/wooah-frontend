@@ -11,13 +11,13 @@ export interface Twitter {
     expanded_url: string;
     url: string;
   }[];
-  media:
+  media: (
     | {
         type: "video";
         url: string;
         src: string;
         poster: string;
-      }[]
+      }
     | {
         src: string;
         origin: string;
@@ -25,7 +25,8 @@ export interface Twitter {
         height: number;
         type: "photo";
         url: string;
-      }[];
+      }
+  )[];
   meta: {
     card: string;
     site: string;

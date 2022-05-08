@@ -28,7 +28,7 @@ const useTranslate = (
     });
     if (data) setTranslatedValue(data?.translation);
     if (error) alert("번역된 데이터를 가져오지 못했습니다.");
-  }, []);
+  }, [id, contentsType, languageCode]);
 
   const data = isTranslated ? translatedValue : defaultValue;
 

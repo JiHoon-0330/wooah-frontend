@@ -63,7 +63,7 @@ const WeverseContent = ({
         {!type && <Button onClick={getTranslatedValue}>번역</Button>}
         {formattedImages && <NextImages images={formattedImages} />}
         {attachedVideos && (
-          <Medias medias={getFormattedMedias(attachedVideos)} />
+          <Medias type="weverse" medias={getFormattedMedias(attachedVideos)} />
         )}
         {type === "VIDEO" && youtubeId && <Youtube youtubeId={youtubeId} />}
       </div>

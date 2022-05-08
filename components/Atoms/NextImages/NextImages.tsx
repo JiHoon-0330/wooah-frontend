@@ -12,9 +12,8 @@ interface Props {
 }
 
 const NextImages = ({ images }: Props) => {
-  if (!images?.length) {
-    return null;
-  }
+  if (!images?.length) return null;
+
   return (
     <div className={styles.images}>
       {images.map(({ origin, ...props }) => (
@@ -22,7 +21,7 @@ const NextImages = ({ images }: Props) => {
           <a target="_blank">
             <Image
               {...props}
-              layout="intrinsic"
+              layout="responsive"
               loading="lazy"
               placeholder="blur"
               blurDataURL={`/_next/image?url=${encodeURIComponent(

@@ -9,9 +9,23 @@ import getEnNameFromKoName from "../../../services/artist/enNameFromKoName";
 import Images from "../../Atoms/Images/Images";
 import { TWITTER_API } from "../../../types/twitter/twitterApi";
 import styles from "./TwitterPost.module.css";
+import { useMemo } from "react";
 
 type Props = TWITTER_API["GET TWITTER_POST /twitter"]["return"]["data"][0];
-
+type MediaVideoType = {
+  type: "video";
+  url: string;
+  src: string;
+  poster: string;
+};
+type MediaPhotoType = {
+  src: string;
+  origin: string;
+  width: number;
+  height: number;
+  type: "photo";
+  url: string;
+};
 const TwitterPost = ({
   sortIndex,
   isRt,
@@ -34,6 +48,21 @@ const TwitterPost = ({
     media?.[0]?.url,
   );
 
+  const [videoTypeMediaList, photoTypeMediaList] = useMemo(() => {
+    if (!media?.length) return [];
+    const videoTypeMediaList = media.filter(
+      (item: MediaVideoType | MediaPhotoType): item is MediaVideoType => {
+        return item.type === "video";
+      },
+    );
+    const photoTypeMediaList = media.filter(
+      (item: MediaVideoType | MediaPhotoType): item is MediaPhotoType => {
+        return item.type === "photo";
+      },
+    );
+    return [videoTypeMediaList, photoTypeMediaList];
+  }, [media]);
+
   return (
     <Card artistName={enName!}>
       <div className={styles.wrapper}>
@@ -51,31 +80,11 @@ const TwitterPost = ({
           <TwitterName id={screen_name} type="screen_name" />
         </div>
         <TwitterBody body={formattedBody} />
-        {media?.[0]?.type === "photo" && (
-          <NextImages
-            images={
-              media as {
-                src: string;
-                origin: string;
-                width: number;
-                height: number;
-                type: "photo" | "video";
-                url: string;
-              }[]
-            }
-          />
+        {!!photoTypeMediaList?.length && (
+          <NextImages images={photoTypeMediaList} />
         )}
-        {media?.[0]?.type === "video" && (
-          <Medias
-            medias={
-              media as {
-                type: "video";
-                url: string;
-                src: string;
-                poster: string;
-              }[]
-            }
-          />
+        {!!videoTypeMediaList?.length && (
+          <Medias type="twitter" medias={videoTypeMediaList} />
         )}
         {!!meta?.length && <Images images={meta} />}
       </div>
