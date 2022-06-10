@@ -1,15 +1,15 @@
+import { useMemo } from "react";
+import getEnNameFromKoName from "../../../services/artist/enNameFromKoName";
 import getFormattedTwitterBody from "../../../services/twitterBody/formattedTwitterBody";
+import { TWITTER_API } from "../../../types/twitter/twitterApi";
 import Card from "../../Atoms/Card/Card";
 import Date from "../../Atoms/Date/Date";
+import Images from "../../Atoms/Images/Images";
 import Medias from "../../Atoms/Media/Medias";
 import NextImages from "../../Atoms/NextImages/NextImages";
 import TwitterBody from "../../Atoms/TwitterBody/TwitterBody";
 import TwitterName from "../../Atoms/TwitterName/TwitterName";
-import getEnNameFromKoName from "../../../services/artist/enNameFromKoName";
-import Images from "../../Atoms/Images/Images";
-import { TWITTER_API } from "../../../types/twitter/twitterApi";
 import styles from "./TwitterPost.module.css";
-import { useMemo } from "react";
 
 type Props = TWITTER_API["GET TWITTER_POST /twitter"]["return"]["data"][0];
 type MediaVideoType = {
@@ -84,7 +84,13 @@ const TwitterPost = ({
           <NextImages images={photoTypeMediaList} />
         )}
         {!!videoTypeMediaList?.length && (
-          <Medias type="twitter" medias={videoTypeMediaList} />
+          <Medias
+            type="twitter"
+            medias={videoTypeMediaList?.map(({ src, poster }) => ({
+              src: src.replace("https://video.twimg.com", "/twitter-video"),
+              poster,
+            }))}
+          />
         )}
         {!!meta?.length && <Images images={meta} />}
       </div>

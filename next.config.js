@@ -24,6 +24,10 @@ const nextConfig = {
         source: "/instagram/:path*",
         destination: `https://scontent.cdninstagram.com/:path*`,
       },
+      {
+        source: "/twitter-video/:path*",
+        destination: `https://video.twimg.com/:path*`,
+      },
     ];
   },
   pageExtensions: isProd ? ["stories.tsx", "tsx", "ts"] : ["tsx", "ts"],
