@@ -1,0 +1,36 @@
+.wrapper {
+  margin-bottom: var(--content-gap);
+  padding: 7rem;
+  border-radius: var(--rounded-default);
+  background-color: rgb(243, 244, 246);
+}
+
+.card {
+  padding: 13rem;
+  border-radius: var(--rounded-default);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  font-size: 17rem;
+  font-weight: 700;
+}
+
+.date {
+  font-size: 14rem;
+  font-weight: 700;
+}
+
+.memberWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.member {
+  padding: 4rem 8rem;
+  border-radius: var(--rounded-sm);
+  font-size: 15rem;
+  font-weight: 700;
+}
