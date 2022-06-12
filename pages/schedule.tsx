@@ -1,18 +1,16 @@
 import { GetStaticProps } from "next";
-import { QueryClient } from "react-query";
+import { dehydrate, QueryClient } from "react-query";
 import Schedule, {
   fetchSchedule,
 } from "../components/Templates/Schedule/Schedule";
 
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();
+  await queryClient.prefetchQuery("/schedule", fetchSchedule);
 
   return {
     props: {
-      dehydratedState: await queryClient.prefetchQuery(
-        "/schedule",
-        fetchSchedule,
-      ),
+      dehydratedState: dehydrate(queryClient),
     },
     revalidate: 60,
   };
