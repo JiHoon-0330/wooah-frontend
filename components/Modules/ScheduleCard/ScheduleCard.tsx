@@ -37,7 +37,7 @@ const getDate = (time: number, status: string) => {
   const d = newDate.getDate();
   const day = newDate.getDay();
   const newDate2 = new Date(
-    `${numberFormat(y)}.${numberFormat(m)}.${numberFormat(d)}`,
+    `${numberFormat(y)}-${numberFormat(m)}-${numberFormat(d)}`,
   );
 
   const DDay = Math.ceil(
@@ -81,7 +81,7 @@ const ScheduleCard = ({ schedule }: Props) => {
                   <span>[{category}]</span>
                   <span>{title}</span>
                 </div>
-                <div className={styles.date}>{`${date} ${sTime} ~ ${
+                <div className={styles.date}>{`${status} ${date} ${sTime} ~ ${
                   eTime ?? ""
                 }`}</div>
               </div>

@@ -71,7 +71,7 @@ const TwitterPost = ({
   }, [media]);
 
   return (
-    <Card artistName={enName!}>
+    <Card artistName={screen_name === "wooah_nv" ? enName! : "default"}>
       <div className={styles.wrapper}>
         <div className={styles.topContainer}>
           <div className={styles.nameContainer}>

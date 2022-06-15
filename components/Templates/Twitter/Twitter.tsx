@@ -39,7 +39,6 @@ const Twitter = () => {
               {page?.data?.length &&
                 page?.data?.map((value, index) => {
                   const isLast = page.data.length === index + 1;
-                  console.log(value.user_mentions);
                   return (
                     <div
                       ref={isLast ? ref : null}

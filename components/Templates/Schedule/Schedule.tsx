@@ -41,7 +41,7 @@ const Schedule = () => {
     () => ({ marginBottom: "var(--content-gap)" }),
     [],
   );
-  console.log(data, error, isLoading);
+
   if (isLoading) {
     return <Loading />;
   }
