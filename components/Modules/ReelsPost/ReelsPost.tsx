@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { memo, useMemo } from "react";
 import useTwemoji from "../../../hooks/useTwemoji";
 import { Reels } from "../../../types/reels/reels";
@@ -30,6 +31,12 @@ const ReelsPost = ({ body, createdAt, poster, src }: Reels) => {
   return (
     <Card artistName="default">
       <div className={styles.wrapper}>
+        <div className={styles.title}>
+          <Link href="https://www.instagram.com/wooah_nv">
+            <a target="_blank">@wooah_nv</a>
+          </Link>
+          <Date date={createdAt * 1000} />
+        </div>
         <Medias
           type="reels"
           medias={useMemo(
@@ -50,7 +57,6 @@ const ReelsPost = ({ body, createdAt, poster, src }: Reels) => {
             className={styles.body}
             dangerouslySetInnerHTML={{ __html: formattedBody }}
           />
-          <Date date={createdAt * 1000} />
         </div>
       </div>
     </Card>

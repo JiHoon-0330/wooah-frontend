@@ -1,9 +1,11 @@
 .twitter__hashtag,
 .twitter__url {
   text-decoration: none;
+  word-break: break-word;
   color: #1d98f0;
 }
 .twitter__hashtag:hover,
 .twitter__url:hover {
+  cursor: pointer;
   text-decoration: underline;
 }
