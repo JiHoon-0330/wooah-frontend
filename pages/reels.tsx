@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import Reels from "../components/Templates/Reels/Reels";
+import withTitle from "../hocs/withTitle";
 import { ssrReactQuery } from "../services/data-fetch/staticProps";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -15,4 +16,4 @@ const ReelsPage = () => {
   return <Reels />;
 };
 
-export default ReelsPage;
+export default withTitle(ReelsPage, "릴스");

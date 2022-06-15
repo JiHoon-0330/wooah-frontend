@@ -1,5 +1,6 @@
-import Weverse from "../components/Templates/Weverse/Weverse";
 import { GetStaticProps } from "next";
+import Weverse from "../components/Templates/Weverse/Weverse";
+import withTitle from "../hocs/withTitle";
 import { ssrReactQuery } from "../services/data-fetch/staticProps";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -15,4 +16,4 @@ const HomePage = () => {
   return <Weverse />;
 };
 
-export default HomePage;
+export default withTitle(HomePage, "위버스");

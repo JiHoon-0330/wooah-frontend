@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import Twitter from "../components/Templates/Twitter/Twitter";
+import withTitle from "../hocs/withTitle";
 import { ssrReactQuery } from "../services/data-fetch/staticProps";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -15,4 +16,4 @@ const TwitterPage = () => {
   return <Twitter />;
 };
 
-export default TwitterPage;
+export default withTitle(TwitterPage, "트위터");

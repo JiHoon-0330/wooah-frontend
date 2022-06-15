@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "./Navbar.module.css";
 
-type Menu = "위버스" | "트위터" | "릴스" | "일정";
+export type Menu = "위버스" | "트위터" | "릴스" | "일정";
 //  "일정" | "블로그" | "설정";
 
 const Navbar = () => {

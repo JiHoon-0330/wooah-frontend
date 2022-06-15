@@ -3,6 +3,7 @@ import { dehydrate, QueryClient } from "react-query";
 import Schedule, {
   fetchSchedule,
 } from "../components/Templates/Schedule/Schedule";
+import withTitle from "../hocs/withTitle";
 
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();
@@ -20,4 +21,4 @@ const SchedulePage = () => {
   return <Schedule />;
 };
 
-export default SchedulePage;
+export default withTitle(SchedulePage, "일정");
