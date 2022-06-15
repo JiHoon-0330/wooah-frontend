@@ -67,13 +67,13 @@ const Schedule = () => {
   return (
     <div className={styles.wrapper}>
       {isShowPrevSchedule ? (
-        <ScheduleCard schedule={prevList} />
+        <ScheduleCard key="prev" schedule={prevList} />
       ) : (
         <Button style={buttonStyle} onClick={onClickShowPrevSchedule}>
           {"지난 일정 보기"}
         </Button>
       )}
-      <ScheduleCard schedule={nextList} />
+      <ScheduleCard key="next" schedule={nextList} />
     </div>
   );
 };

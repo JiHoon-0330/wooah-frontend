@@ -45,7 +45,9 @@ const getDate = (time: number, status: string) => {
   );
 
   return `${
-    status ? status + " " : `${DDay >= 0 ? `D-${DDay || "Day"} ` : ""}`
+    status
+      ? status + " "
+      : `${DDay >= 0 ? (DDay === 0 ? "오늘 " : `D-${DDay} `) : ""}`
   }${numberFormat(y)}.${numberFormat(m)}.${numberFormat(d)} ${DAY[day]}요일`;
 };
 
