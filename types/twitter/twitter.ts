@@ -6,6 +6,7 @@ export interface Twitter {
   full_text: string;
   created_at: string;
   hashtags: string[];
+  user_mentions: string[];
   urls: {
     display_url: string;
     expanded_url: string;

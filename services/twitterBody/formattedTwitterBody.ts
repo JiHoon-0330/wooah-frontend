@@ -4,6 +4,7 @@ const replaceBody = (body: string, oldBody: string, newBody: string) =>
 const getFormattedTwitterBody = (
   body: string,
   hashtags: string[],
+  user_mentions: string[],
   urls: {
     display_url: string;
     expanded_url: string;
@@ -12,8 +13,9 @@ const getFormattedTwitterBody = (
   mediaUrl: string,
 ) => {
   let formattedBody = replaceBody(body, "\\\\n", "<br/>");
+
   formattedBody = replaceBody(formattedBody, mediaUrl ?? "", "");
-  formattedBody = replaceBody(formattedBody, mediaUrl ?? "", "");
+
   formattedBody = urls.reduce(
     (formattedBody, url) =>
       replaceBody(
@@ -32,12 +34,28 @@ const getFormattedTwitterBody = (
     formattedBody,
   );
 
-  return hashtags.reduce(
+  formattedBody = user_mentions.reduce(
+    (formattedBody, user_mentions, index) =>
+      replaceBody(formattedBody, `@${user_mentions}`, `@${index}@`),
+    formattedBody,
+  );
+
+  formattedBody = hashtags.reduce(
     (formattedBody, hashtag, index) =>
       replaceBody(
         formattedBody,
         `#${index}#`,
         `<a class=twitter__hashtag href="https://twitter.com/hashtag/${hashtag}?src=hashtag_click" target="_blank">#${hashtag}</a>`,
+      ),
+    formattedBody,
+  );
+
+  return user_mentions.reduce(
+    (formattedBody, user_mentions, index) =>
+      replaceBody(
+        formattedBody,
+        `@${index}@`,
+        `<a class=twitter__hashtag href="https://twitter.com/${user_mentions}" target="_blank">@${user_mentions}</a>`,
       ),
     formattedBody,
   );

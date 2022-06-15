@@ -26,6 +26,11 @@ type MediaPhotoType = {
   type: "photo";
   url: string;
 };
+
+const sortTextByLength = (list: string[]) => {
+  if (!list?.length) return [];
+  return [...list]?.sort((a, b) => b.length - a.length);
+};
 const TwitterPost = ({
   sortIndex,
   isRt,
@@ -34,6 +39,7 @@ const TwitterPost = ({
   full_text,
   created_at,
   hashtags,
+  user_mentions,
   urls,
   media,
   meta,
@@ -43,7 +49,8 @@ const TwitterPost = ({
   );
   const formattedBody = getFormattedTwitterBody(
     full_text,
-    [...hashtags]?.sort((a, b) => b.length - a.length),
+    sortTextByLength(hashtags),
+    sortTextByLength(user_mentions),
     urls,
     media?.[0]?.url,
   );

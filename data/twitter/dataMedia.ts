@@ -20,6 +20,7 @@ const dataMedia = {
     "루시",
     "wooah_TMI",
   ],
+  user_mentions: [],
   urls: [],
   media: [
     {

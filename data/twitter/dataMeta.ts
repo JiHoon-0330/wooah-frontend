@@ -30,6 +30,7 @@ const dataMeta = {
     "EPEX",
     "콬TV",
   ],
+  user_mentions: [],
   urls: [
     {
       display_url: "youtu.be/oXE6y1h8uOw",

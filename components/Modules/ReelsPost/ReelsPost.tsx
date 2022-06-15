@@ -10,11 +10,17 @@ import styles from "./Reels.module.css";
 const ReelsPost = ({ body, createdAt, poster, src }: Reels) => {
   const ref = useTwemoji(body);
 
-  const formattedBody = body.replace(/#[^\s#]+/g, (tag) => {
-    return `<a class="twitter__hashtag" href=https://www.instagram.com/explore/tags/${tag.slice(
-      1,
-    )} target="_blank"/>${tag}</a>`;
-  });
+  const formattedBody = body
+    .replace(/#[^\s#]+/g, (tag) => {
+      return `<a class="twitter__hashtag" href=https://www.instagram.com/explore/tags/${tag.slice(
+        1,
+      )} target="_blank"/>${tag}</a>`;
+    })
+    .replace(/@[^\s@]+/g, (tag) => {
+      return `<a class="twitter__hashtag" href=https://www.instagram.com/${tag.slice(
+        1,
+      )} target="_blank"/>${tag}</a>`;
+    });
 
   const proxyUrl = (url: string) => {
     const splitUrl = url?.split("/v/");
