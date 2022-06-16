@@ -83,7 +83,7 @@ const ScheduleCard = ({ schedule }: Props) => {
                   <span>[{category}]</span>
                   <span>{title}</span>
                 </div>
-                <div className={styles.date}>{`${status} ${date} ${sTime} ~ ${
+                <div className={styles.date}>{`${date} ${sTime} ~ ${
                   eTime ?? ""
                 }`}</div>
               </div>
