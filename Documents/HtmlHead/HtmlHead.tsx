@@ -8,7 +8,7 @@ const HtmlHead = () => {
       <link rel="favicon" href="./favicon.ico" />
       <meta charSet="utf-8" />
       <meta name="description" content="우아!" />
-      <meta name="keywords" content="우아! woo!ah!" />
+      <meta name="keywords" content="우아, 우아!, wooah, woo!ah!" />
     </>
   );
 };
