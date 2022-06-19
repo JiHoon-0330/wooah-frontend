@@ -29,19 +29,28 @@ const getTime = (time: number) => {
   return `${numberFormat(h)}:${numberFormat(m)}`;
 };
 
-const getDate = (time: number, status: string) => {
-  const nowDate = new Date();
-  const newDate = new Date(time);
+const getFormattedDate = (time?: number) => {
+  const newDate = time ? new Date(time) : new Date();
   const y = newDate.getFullYear();
   const m = newDate.getMonth() + 1;
   const d = newDate.getDate();
   const day = newDate.getDay();
-  const newDate2 = new Date(
-    `${numberFormat(y)}-${numberFormat(m)}-${numberFormat(d)}`,
-  );
+
+  return {
+    date: new Date(`${numberFormat(y)}-${numberFormat(m)}-${numberFormat(d)}`),
+    y,
+    m,
+    d,
+    day,
+  };
+};
+
+const getDate = (time: number, status: string) => {
+  const { date: nowDate } = getFormattedDate();
+  const { date: newDate, y, m, d, day } = getFormattedDate(time);
 
   const DDay = Math.ceil(
-    (newDate2.getTime() - nowDate.getTime()) / (60 * 60 * 24 * 1000),
+    (newDate.getTime() - nowDate.getTime()) / (60 * 60 * 24 * 1000),
   );
 
   return `${
