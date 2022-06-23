@@ -2,20 +2,8 @@ const FONT_CACHE = "FONT_CACHE";
 const NEXT_IMAGE = "NEXT_IMAGE";
 const TWEMOJI = "TWEMOJI";
 
-const fonts = [
-  "/fonts/NotoSansKR/NotoSansKR-Bold.otf",
-  "/fonts/NotoSansKR/NotoSansKR-Light.otf",
-  "/fonts/NotoSansKR/NotoSansKR-Medium.otf",
-  "/fonts/NotoSansKR/NotoSansKR-Regular.otf",
-];
-
 self.addEventListener("install", (event) => {
   self.skipWaiting();
-  event.waitUntil(
-    caches.open(FONT_CACHE).then((cache) => {
-      return cache.addAll(fonts);
-    }),
-  );
 });
 
 const getFonts = async (url) => {
@@ -50,8 +38,6 @@ const getCacheByRequest = async (request) => {
   const isUrlMatch = getIsUrlMatch(url);
 
   switch (true) {
-    case isUrlMatch("/fonts/"):
-      return await getFonts(url);
     case isUrlMatch("/_next/image"):
       return await getCache(request, NEXT_IMAGE);
     case isUrlMatch("twemoji.maxcdn.com"):

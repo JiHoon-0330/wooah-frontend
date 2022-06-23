@@ -9,6 +9,35 @@ const HtmlHead = () => {
       <meta charSet="utf-8" />
       <meta name="description" content="우아!" />
       <meta name="keywords" content="우아, 우아!, wooah, woo!ah!" />
+      <link
+        rel="preload"
+        href="/fonts/NotoSansKR/noto-sans-kr-v27-korean-700.woft2"
+        as="font"
+        type="font/woft2"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="/fonts/NotoSansKR/noto-sans-kr-v27-korean-500.woft2"
+        as="font"
+        type="font/woft2"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="/fonts/NotoSansKR/noto-sans-kr-v27-korean-400.woft2"
+        as="font"
+        type="font/woft2"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="/fonts/NotoSansKR/noto-sans-kr-v27-korean-300.woft2"
+        as="font"
+        type="font/woft2"
+        crossOrigin="anonymous"
+      />
+      <link rel="preconnect" href="https://twemoji.maxcdn.com" />
     </>
   );
 };

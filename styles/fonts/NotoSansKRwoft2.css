@@ -1,0 +1,35 @@
+@font-face {
+  font-family: NotoSansKR;
+  src: url("/fonts/NotoSansKR/noto-sans-kr-v27-korean-700.woft2")
+    format("woft2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: NotoSansKR;
+  src: url("/fonts/NotoSansKR/noto-sans-kr-v27-korean-500.woft2")
+    format("woft2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: NotoSansKR;
+  src: url("/fonts/NotoSansKR/noto-sans-kr-v27-korean-400.woft2")
+    format("woft2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: NotoSansKR;
+  src: url("/fonts/NotoSansKR/noto-sans-kr-v27-korean-300.woft2")
+    format("woft2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: optional;
+}
