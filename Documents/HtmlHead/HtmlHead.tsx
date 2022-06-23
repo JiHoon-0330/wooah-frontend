@@ -37,6 +37,7 @@ const HtmlHead = () => {
         type="font/woft2"
         crossOrigin="anonymous"
       />
+      <link rel="preconnect" href="https://api.wooah.shop" />
       <link rel="preconnect" href="https://twemoji.maxcdn.com" />
     </>
   );
