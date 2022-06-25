@@ -5,7 +5,8 @@ import { VideoType } from "../components/Atoms/Media/Medias";
 const useVolume = (type: VideoType) => {
   const { data: volume, refetch } = useQuery(`${type}:volume`, () => {
     if (!window) return 0;
-    return +(localStorage.getItem(type) ?? 0);
+    if (navigator.userAgent.includes("Mobile")) return 1;
+    return +(localStorage.getItem(type) ?? 0.5);
   });
 
   const onVolumeChange = useCallback(
