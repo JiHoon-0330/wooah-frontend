@@ -35,9 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     const userId = user?.userId ?? hash;
     const count = user?.count ? +user?.count + 1 : 1;
 
-    if (!user) {
-      localStorage.setItem("USER", JSON.stringify({ userId, count }));
-    }
+    localStorage.setItem("USER", JSON.stringify({ userId, count }));
 
     apiAxios({
       url: "/user",
