@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       .map(() => Math.random().toString(36).slice(2))
       .join("");
     const userId = user?.userId ?? hash;
-    const count = user?.count ? user?.count + 1 : 1;
+    const count = user?.count ? +user?.count + 1 : 1;
 
     if (!user) {
       localStorage.setItem("USER", JSON.stringify({ userId, count }));

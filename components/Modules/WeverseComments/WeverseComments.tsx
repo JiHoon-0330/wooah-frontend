@@ -16,12 +16,13 @@ const WeverseComments = ({ comments }: WeverseCommentsProps) => {
 
   return (
     <div>
-      {comments.map(([parent, childs]) => {
+      {comments.map(([parent, childs], index) => {
         const name = getArtistNameByWeverseId(parent.author.memberId);
+
         return (
           <div
             key={parent.commentId}
-            className={!!childs?.length ? styles.container : ""}
+            className={comments?.length - 1 !== index ? styles.container : ""}
           >
             <Card artistName={name}>
               <WeverseContent {...parent} />
