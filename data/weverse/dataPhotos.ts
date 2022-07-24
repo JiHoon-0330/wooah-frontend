@@ -1,42 +1,16 @@
-import { WeversePhoto } from "../../types/weverse/weverseType";
+import { WeverseReturn } from "../../types/weverse/weverseType";
 
-export default [
+const weversePhotos = [
   {
-    postId: 1685454924727514,
-    imgUrl:
-      "https://cdn-contents-web.weverse.io/user/xlx2048/jpg/ab255dc2b28042c698df54f566e6cdce608.jpg",
-    imgWidth: 640,
-    imgHeight: 630,
-    id: 303367710,
-    contentIndex: 0,
-    thumbnailImgUrl:
-      "https://cdn-contents-web.weverse.io/user/mx750/jpg/ab255dc2b28042c698df54f566e6cdce608.jpg",
-    thumbnailImgWidth: 640,
-    thumbnailImgHeight: 630,
-    orgImgUrl:
-      "https://cdn-contents-web.weverse.io/user/xlx2048/jpg/ab255dc2b28042c698df54f566e6cdce608.jpg",
-    orgImgWidth: 1125,
-    orgImgHeight: 1108,
-    downloadImgFilename: "weverse_post_ab255dc2b28042c698df54f566e6cdce608.jpg",
-    isGif: false,
+    width: 1931,
+    height: 2576,
+    url: "https://weverse-phinf.pstatic.net/MjAyMjA3MjNfMTM0/MDAxNjU4NTQ0NzQwMjcz.PraRiEP4GkxemfGs_sE67f-0zy-impiits5YQFGI7UYg.F5wgxuks0v9Ep6mmAkt8fbgjFhgomlvsZWnikozR1Egg.JPEG/image.jpg",
   },
   {
-    postId: 1685454924727514,
-    imgUrl:
-      "https://cdn-contents-web.weverse.io/user/xlx2048/jpg/27333fc8dda948a4aeb393bb46bf2fd5600.jpg",
-    imgWidth: 640,
-    imgHeight: 621,
-    id: 303367711,
-    contentIndex: 1,
-    thumbnailImgUrl:
-      "https://cdn-contents-web.weverse.io/user/mx750/jpg/27333fc8dda948a4aeb393bb46bf2fd5600.jpg",
-    thumbnailImgWidth: 640,
-    thumbnailImgHeight: 621,
-    orgImgUrl:
-      "https://cdn-contents-web.weverse.io/user/xlx2048/jpg/27333fc8dda948a4aeb393bb46bf2fd5600.jpg",
-    orgImgWidth: 1125,
-    orgImgHeight: 1092,
-    downloadImgFilename: "weverse_post_27333fc8dda948a4aeb393bb46bf2fd5600.jpg",
-    isGif: false,
+    width: 1931,
+    height: 2576,
+    url: "https://weverse-phinf.pstatic.net/MjAyMjA3MjNfMjY4/MDAxNjU4NTQ0NzQwMjg1.GSyEQty6rit1_EyZKj3_G1L3OeVUypS3vXf_2wYAzYgg.6NYSMILRHuK0dIrJWbhOeEOKUMfFpkhb1ZwSqarqXzMg.JPEG/image.jpg",
   },
-] as WeversePhoto[];
+] as WeverseReturn["photo"];
+
+export default weversePhotos;

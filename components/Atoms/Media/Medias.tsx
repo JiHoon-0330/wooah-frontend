@@ -6,7 +6,7 @@ export type VideoType = "weverse" | "twitter" | "reels";
 
 interface Props {
   type: VideoType;
-  medias: { src: string; poster: string }[];
+  medias: { src: string; poster?: string }[];
 }
 
 const Medias = ({ type, medias }: Props) => {

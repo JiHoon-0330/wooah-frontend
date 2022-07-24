@@ -15,7 +15,11 @@ const nextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
-    domains: ["cdn-contents-web.weverse.io", "pbs.twimg.com"],
+    domains: [
+      "cdn-contents-web.weverse.io",
+      "weverse-phinf.pstatic.net",
+      "pbs.twimg.com",
+    ],
     deviceSizes: [5, 280, 320, 375, 425],
     imageSizes: [1, 270, 315, 360, 520],
   },
