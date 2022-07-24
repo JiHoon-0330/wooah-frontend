@@ -40,7 +40,7 @@ const WeverseContent = (
         </div>
         <Body body={originBody} />
         {/* {!type && <Button onClick={getTranslatedValue}>번역</Button>} */}
-        {!!photos?.length && (
+        {!vod && !!photos?.length && (
           <NextImages
             images={photos.map(({ url, width, height }) => ({
               origin: url,
@@ -50,7 +50,12 @@ const WeverseContent = (
             }))}
           />
         )}
-        {vod && <Medias type="weverse" medias={[{ src: vod }]} />}
+        {vod && (
+          <Medias
+            type="weverse"
+            medias={[{ src: vod, poster: photos?.[0]?.url }]}
+          />
+        )}
         {/* {youtube && <Youtube youtubeId={youtubeId} />} */}
       </div>
     </>
