@@ -46,6 +46,7 @@ const Weverse = () => {
 
                   return (
                     <div
+                      id={postId}
                       className={`${styles.empty} ${styles.post}`}
                       key={postId}
                       ref={ref}
@@ -57,6 +58,7 @@ const Weverse = () => {
 
                 return (
                   <div
+                    id={postId}
                     className={styles.post}
                     key={postId}
                     ref={isLast ? ref : null}
