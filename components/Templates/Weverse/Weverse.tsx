@@ -48,7 +48,7 @@ const Weverse = () => {
                     <div
                       id={postId}
                       className={`${styles.empty} ${styles.post}`}
-                      key={postId}
+                      key={`${postId}:${index}`}
                       ref={ref}
                     />
                   );

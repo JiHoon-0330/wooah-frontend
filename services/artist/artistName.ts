@@ -15,7 +15,6 @@ const getArtistNameByWeverseId = (artistId: MemberIdType | any) => {
     case undefined:
       return "default";
     default:
-      console.warn(`(getArtistNameByWeverseId) unknown artist id: `, artistId);
       return "default";
   }
 };
