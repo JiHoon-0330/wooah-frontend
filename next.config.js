@@ -37,6 +37,13 @@ const nextConfig = {
   },
   pageExtensions: isProd ? ["stories.tsx", "tsx", "ts"] : ["tsx", "ts"],
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    if (!dev && !isServer) {
+      Object.assign(config.resolve.alias, {
+        react: "preact/compat",
+        "react-dom": "preact/compat",
+      });
+    }
+
     const plugins = [
       ...config.plugins,
       new webpack.IgnorePlugin({

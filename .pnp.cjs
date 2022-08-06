@@ -64,6 +64,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:12.1.5"],\
             ["postcss", "npm:8.4.8"],\
             ["postcss-flexbugs-fixes", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:5.0.2"],\
+            ["preact", "npm:10.10.1"],\
             ["puppeteer", "npm:13.4.0"],\
             ["react", "npm:18.0.0"],\
             ["react-dom", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:18.0.0"],\
@@ -6820,7 +6821,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-preset-angular", null],\
             ["jest-specific-snapshot", "virtual:72412d2e17027fd22823b5c5970d1c36e47603675d93c0de7cd3e243e85c80f06246bed6f3ef054220626b0274ad2dd32f6d4779b898a6c215185f9b9a289559#npm:4.0.0"],\
             ["jest-vue-preprocessor", null],\
-            ["preact", null],\
+            ["preact", "npm:10.10.1"],\
             ["preact-render-to-string", "virtual:72412d2e17027fd22823b5c5970d1c36e47603675d93c0de7cd3e243e85c80f06246bed6f3ef054220626b0274ad2dd32f6d4779b898a6c215185f9b9a289559#npm:5.1.20"],\
             ["pretty-format", "npm:26.6.2"],\
             ["react", "npm:18.0.0"],\
@@ -21790,6 +21791,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["preact", [\
+        ["npm:10.10.1", {\
+          "packageLocation": "./.yarn/cache/preact-npm-10.10.1-d9c6c9f767-a79a196770.zip/node_modules/preact/",\
+          "packageDependencies": [\
+            ["preact", "npm:10.10.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["preact-render-to-string", [\
         ["npm:5.1.20", {\
           "packageLocation": "./.yarn/cache/preact-render-to-string-npm-5.1.20-aa3a3eb1f8-69e3675141.zip/node_modules/preact-render-to-string/",\
@@ -21803,7 +21813,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["preact-render-to-string", "virtual:72412d2e17027fd22823b5c5970d1c36e47603675d93c0de7cd3e243e85c80f06246bed6f3ef054220626b0274ad2dd32f6d4779b898a6c215185f9b9a289559#npm:5.1.20"],\
             ["@types/preact", null],\
-            ["preact", null],\
+            ["preact", "npm:10.10.1"],\
             ["pretty-format", "npm:3.8.0"]\
           ],\
           "packagePeers": [\
@@ -26578,6 +26588,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:12.1.5"],\
             ["postcss", "npm:8.4.8"],\
             ["postcss-flexbugs-fixes", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:5.0.2"],\
+            ["preact", "npm:10.10.1"],\
             ["puppeteer", "npm:13.4.0"],\
             ["react", "npm:18.0.0"],\
             ["react-dom", "virtual:38ebf1e4778d10f54b9d5180532ada236db5b6e665485e3604d1f83c87b323d20627e85ed8ec0cecfcaff4142e55e463dfb74ed7884eea4b2ead8debb91b8334#npm:18.0.0"],\

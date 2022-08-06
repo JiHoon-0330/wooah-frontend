@@ -15095,6 +15095,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"preact@npm:^10.10.1":
+  version: 10.10.1
+  resolution: "preact@npm:10.10.1"
+  checksum: a79a196770064eb4d5a533e5b407f5eb842e47ea143bd4687e436ad3faf634efd4fda1185fab7b8c687a0889f1dea61349f1a01d6d6dfe1db3e0f4361f65c1d3
+  languageName: node
+  linkType: hard
+
 "prelude-ls@npm:^1.2.1":
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
@@ -18992,6 +18999,7 @@ __metadata:
     next: latest
     postcss: ^8.4.8
     postcss-flexbugs-fixes: ^5.0.2
+    preact: ^10.10.1
     puppeteer: ^13.4.0
     react: latest
     react-dom: latest
