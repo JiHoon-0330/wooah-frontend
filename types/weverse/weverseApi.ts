@@ -4,6 +4,6 @@ export interface WEVERSE_API {
     query?: {
       from?: string;
     };
-    return: { data: WeverseReturn[]; lastId: number; hasMore: boolean };
+    return: { data: WeverseReturn[]; lastId: string; hasMore: boolean };
   };
 }

@@ -1,10 +1,14 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import dataPhotos from "../../../data/weverse/dataPhotos";
-import { getFormattedImages } from "../../../services/images/weverseImages";
 import NextImages from "./NextImages";
 
 type Component = typeof NextImages;
-const images = getFormattedImages(dataPhotos)!;
+const images = dataPhotos!.map(({ url, width, height }) => ({
+  origin: url,
+  src: url,
+  width,
+  height,
+}));
 
 export default {
   title: "Atoms/NextImages",
