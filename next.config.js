@@ -14,8 +14,13 @@ const nextConfig = {
     workerThreads: true,
   },
   images: {
-    domains: ["cdn-contents-web.weverse.io", "pbs.twimg.com"],
-    deviceSizes: [320, 375, 425],
+    formats: ["image/avif", "image/webp"],
+    domains: [
+      "cdn-contents-web.weverse.io",
+      "weverse-phinf.pstatic.net",
+      "pbs.twimg.com",
+    ],
+    deviceSizes: [5, 280, 320, 375, 425],
     imageSizes: [1, 270, 315, 360, 520],
   },
   async rewrites() {

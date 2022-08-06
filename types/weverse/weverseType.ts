@@ -1,64 +1,38 @@
-export type WeverseArtistId = 109 | 110 | 111 | 112 | 113 | undefined;
-export type WeverseGradeType = "ARTIST" | "FAN";
+export type MemberIdType =
+  | "287797a9070d1c7b9276b68aa2aae940"
+  | "ce731ac8ed27380b2a1c134ab0f16928"
+  | "1a0790fc97ab2226299e0be040d37131"
+  | "406ce8cdf0321afb462da0f782e9c15e"
+  | "578c28ecd0cd9a2d20c8c0badaa09e23";
 
-export type WeverseContentsType =
-  | "POST"
-  | "ARTIST_POST"
-  | "TO_FANS"
-  | "MEDIA"
-  | "COMMENT_DETAIL";
-
-export type WeverseMediaType = "VIDEO" | "PHOTO";
-
-export interface WeverseReturn {
-  id: number;
-  contentsId: string;
-  contentsType: WeverseContentsType;
-  comments: WeverseComment[][] | WeverseComment[];
-  profileNickname: string;
+export type Author =
+  | {
+      memberId: MemberIdType;
+      profileName: string;
+      profileType: "ARTIST";
+    }
+  | {
+      memberId: string;
+      profileName: string;
+      profileType: "FAN";
+    };
+export type WeverseReturn = {
+  postId: string;
   body: string;
-  grade: WeverseGradeType;
   createdAt: string;
-  photos?: WeversePhoto[];
-  attachedVideos?: WeverseAttachedVideos[];
-  artistId?: WeverseArtistId;
-  postError?: boolean;
-  title?: string;
-  type?: WeverseMediaType;
-  youtubeId?: string;
-  isLocked?: boolean;
-}
+  author: Author;
+  locked: boolean;
+  photo?: { width: number; height: number; url: string }[];
+  video?: string | null;
+  translated?: string | null;
+  comments: [WeverseComment, WeverseComment[]][];
+};
 
 export interface WeverseComment {
-  id: number;
+  commentId: string;
+  postId?: string;
   body: string;
-  createdAt: string;
-  grade: WeverseGradeType;
-  profileNickname: string;
-  artistId?: WeverseArtistId | undefined;
-}
-
-export interface WeversePhoto {
-  postId: number;
-  imgUrl: string;
-  imgWidth: number;
-  imgHeight: number;
-  id: number;
-  contentIndex: number;
-  thumbnailImgUrl: string;
-  thumbnailImgWidth: number;
-  thumbnailImgHeight: number;
-  orgImgUrl: string;
-  orgImgWidth: number;
-  orgImgHeight: number;
-  downloadImgFilename: string;
-  isGif: boolean;
-}
-
-export interface WeverseAttachedVideos {
-  playTime: number;
-  thumbnailHeight: number;
-  thumbnailUrl: string;
-  thumbnailWidth: number;
-  videoUrl: string;
+  createdAt: string | number;
+  author: Author;
+  translated?: string | null;
 }

@@ -1,16 +1,16 @@
-import { WeverseArtistId } from "../../types/weverse/weverseType";
+import { MemberIdType } from "../../types/weverse/weverseType";
 
-const getArtistNameByWeverseId = (artistId: WeverseArtistId) => {
+const getArtistNameByWeverseId = (artistId: MemberIdType | any) => {
   switch (artistId) {
-    case 109:
+    case "287797a9070d1c7b9276b68aa2aae940":
       return "NANA";
-    case 110:
+    case "ce731ac8ed27380b2a1c134ab0f16928":
       return "WOOYEON";
-    case 111:
+    case "1a0790fc97ab2226299e0be040d37131":
       return "SORA";
-    case 112:
+    case "406ce8cdf0321afb462da0f782e9c15e":
       return "LUCY";
-    case 113:
+    case "578c28ecd0cd9a2d20c8c0badaa09e23":
       return "MINSEO";
     case undefined:
       return "default";
