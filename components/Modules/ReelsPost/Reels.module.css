@@ -21,7 +21,7 @@
 }
 
 .body {
-  white-space: pre-wrap;
+  white-space: pre-line;
   font-size: 16rem;
   font-weight: 700;
 }
