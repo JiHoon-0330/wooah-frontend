@@ -55,7 +55,7 @@ const nextConfig = {
           STORYBOOK: JSON.stringify("false"),
           API_DOMAIN: JSON.stringify(
             isProd || isTest
-              ? "https://api.wooah.shop"
+              ? "https://wooah-api.dlwlrma.app"
               : "http://localhost:3000",
           ),
         },
