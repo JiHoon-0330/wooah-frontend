@@ -2,6 +2,10 @@ const HtmlHead = () => {
   return (
     <>
       <meta
+        name="google-site-verification"
+        content="ci3gbGGgWfAtjD4L_Xqvz9afJa7jwF6rgip67ivytOI"
+      />
+      <meta
         name="viewport"
         content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
       />
@@ -37,7 +41,7 @@ const HtmlHead = () => {
         type="font/woft2"
         crossOrigin="anonymous"
       />
-      <link rel="preconnect" href="https://api.wooah.shop" />
+      <link rel="preconnect" href="https://wooah-api.dlwlrma.app" />
       <link rel="preconnect" href="https://twemoji.maxcdn.com" />
     </>
   );
