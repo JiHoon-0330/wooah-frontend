@@ -6,7 +6,6 @@ import Card from "../../Atoms/Card/Card";
 import Date from "../../Atoms/Date/Date";
 import Images from "../../Atoms/Images/Images";
 import Medias from "../../Atoms/Media/Medias";
-import NextImages from "../../Atoms/NextImages/NextImages";
 import TwitterBody from "../../Atoms/TwitterBody/TwitterBody";
 import TwitterName from "../../Atoms/TwitterName/TwitterName";
 import styles from "./TwitterPost.module.css";
@@ -88,13 +87,21 @@ const TwitterPost = ({
         </div>
         <TwitterBody body={formattedBody} />
         {!!photoTypeMediaList?.length && (
-          <NextImages images={photoTypeMediaList} />
+          <Images
+            images={photoTypeMediaList.map((image) => {
+              const { src } = image;
+              return {
+                ...image,
+                src: src.replace("https://pbs.twimg.com/", "/twitter-image/"),
+              };
+            })}
+          />
         )}
         {!!videoTypeMediaList?.length && (
           <Medias
             type="twitter"
             medias={videoTypeMediaList?.map(({ src, poster }) => ({
-              src: src.replace("https://video.twimg.com", "/twitter-video"),
+              src: src.replace("https://video.twimg.com/", "/twitter-video/"),
               poster,
             }))}
           />

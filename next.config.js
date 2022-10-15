@@ -33,6 +33,14 @@ const nextConfig = {
         source: "/twitter-video/:path*",
         destination: `https://video.twimg.com/:path*`,
       },
+      {
+        source: "/twitter-image/:path*",
+        destination: `https://pbs.twimg.com/:path*`,
+      },
+      {
+        source: "/weverse-image/:path*",
+        destination: `https://weverse-phinf.pstatic.net/:path*`,
+      },
     ];
   },
   pageExtensions: isProd ? ["stories.tsx", "tsx", "ts"] : ["tsx", "ts"],
