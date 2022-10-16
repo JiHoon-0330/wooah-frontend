@@ -48,7 +48,7 @@ const WeverseContent = (
           <Images
             images={photos.map(({ url, width, height }) => ({
               origin: convertWeverseImageUrl(url),
-              src: `${convertWeverseImageUrl(url)}?type=s704_704`,
+              src: `${convertWeverseImageUrl(url)}?type=w670`,
               width,
               height,
             }))}
