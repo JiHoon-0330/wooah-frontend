@@ -1,4 +1,4 @@
-export interface Twitter {
+interface TwitterItme {
   sortIndex: string;
   isRt: boolean;
   name: string;
@@ -36,4 +36,8 @@ export interface Twitter {
     title: string;
     description: string;
   }[];
+}
+
+export interface Twitter extends TwitterItme {
+  quoted?: TwitterItme;
 }

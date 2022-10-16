@@ -46,6 +46,7 @@ const TwitterPost = ({
   const enName = getEnNameFromKoName(
     hashtags?.[0] as Parameters<typeof getEnNameFromKoName>[0],
   );
+
   const formattedBody = getFormattedTwitterBody(
     full_text,
     sortTextByLength(hashtags),
@@ -66,6 +67,7 @@ const TwitterPost = ({
         return item.type === "photo";
       },
     );
+
     return [videoTypeMediaList, photoTypeMediaList];
   }, [media]);
 

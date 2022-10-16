@@ -46,6 +46,7 @@ const Twitter = () => {
                       className={styles.post}
                     >
                       <TwitterPost {...value} />
+                      {!!value?.quoted && <TwitterPost {...value.quoted} />}
                     </div>
                   );
                 })}
