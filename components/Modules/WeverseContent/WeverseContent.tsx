@@ -2,8 +2,8 @@ import { memo } from "react";
 import { WeverseReturn } from "../../../types/weverse/weverseType";
 import Body from "../../Atoms/Body/Body";
 import Date from "../../Atoms/Date/Date";
-import Images from "../../Atoms/Images/Images";
 import Medias from "../../Atoms/Media/Medias";
+import NextImages from "../../Atoms/NextImages/NextImages";
 import WeverseNickname from "../../Atoms/WeverseNickname/WeverseNickname";
 import styles from "./WeverseContent.module.css";
 
@@ -45,9 +45,9 @@ const WeverseContent = (
         <Body body={originBody} />
         {/* {!type && <Button onClick={getTranslatedValue}>번역</Button>} */}
         {!!photos?.length && (!vod || (vod && 1 < photos?.length)) && (
-          <Images
+          <NextImages
             images={photos.map(({ url, width, height }) => ({
-              origin: convertWeverseImageUrl(url),
+              origin: url,
               src: `${convertWeverseImageUrl(url)}?type=w670`,
               width,
               height,

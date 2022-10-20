@@ -6,6 +6,7 @@ import Card from "../../Atoms/Card/Card";
 import Date from "../../Atoms/Date/Date";
 import Images from "../../Atoms/Images/Images";
 import Medias from "../../Atoms/Media/Medias";
+import NextImages from "../../Atoms/NextImages/NextImages";
 import TwitterBody from "../../Atoms/TwitterBody/TwitterBody";
 import TwitterName from "../../Atoms/TwitterName/TwitterName";
 import styles from "./TwitterPost.module.css";
@@ -89,7 +90,7 @@ const TwitterPost = ({
         </div>
         <TwitterBody body={formattedBody} />
         {!!photoTypeMediaList?.length && (
-          <Images
+          <NextImages
             images={photoTypeMediaList.map((image) => {
               const { src } = image;
               return {
