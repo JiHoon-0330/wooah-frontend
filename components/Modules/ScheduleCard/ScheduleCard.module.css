@@ -12,10 +12,13 @@
 
 .title {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 4rem;
   font-size: 17rem;
   font-weight: 700;
+}
+.title > *:nth-child(1) {
+  flex-shrink: 0;
 }
 
 .date {
