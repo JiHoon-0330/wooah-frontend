@@ -1,5 +1,5 @@
 const replaceBody = (body: string, oldBody: string, newBody: string) =>
-  body.replace(new RegExp(oldBody, "g"), newBody);
+  body?.replace(new RegExp(oldBody, "g"), newBody);
 
 const getFormattedTwitterBody = (
   body: string,
@@ -16,7 +16,7 @@ const getFormattedTwitterBody = (
 
   formattedBody = replaceBody(formattedBody, mediaUrl ?? "", "");
 
-  formattedBody = urls.reduce(
+  formattedBody = urls?.reduce(
     (formattedBody, url) =>
       replaceBody(
         formattedBody,
@@ -28,19 +28,19 @@ const getFormattedTwitterBody = (
     formattedBody,
   );
 
-  formattedBody = hashtags.reduce(
+  formattedBody = hashtags?.reduce(
     (formattedBody, hashtag, index) =>
       replaceBody(formattedBody, `#${hashtag}`, `#${index}#`),
     formattedBody,
   );
 
-  formattedBody = user_mentions.reduce(
+  formattedBody = user_mentions?.reduce(
     (formattedBody, user_mentions, index) =>
       replaceBody(formattedBody, `@${user_mentions}`, `@${index}@`),
     formattedBody,
   );
 
-  formattedBody = hashtags.reduce(
+  formattedBody = hashtags?.reduce(
     (formattedBody, hashtag, index) =>
       replaceBody(
         formattedBody,
@@ -50,7 +50,7 @@ const getFormattedTwitterBody = (
     formattedBody,
   );
 
-  return user_mentions.reduce(
+  return user_mentions?.reduce(
     (formattedBody, user_mentions, index) =>
       replaceBody(
         formattedBody,
