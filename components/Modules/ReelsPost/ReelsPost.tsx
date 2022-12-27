@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { memo, useMemo } from "react";
+import { memo } from "react";
 import useTwemoji from "../../../hooks/useTwemoji";
 import { Reels } from "../../../types/reels/reels";
+import { isIOS } from "../../../utils/device";
 import { API_DOMAIN } from "../../../utils/env";
 import Card from "../../Atoms/Card/Card";
 import Date from "../../Atoms/Date/Date";
@@ -39,17 +40,16 @@ const ReelsPost = ({ body, createdAt, poster, src }: Reels) => {
         </div>
         <Medias
           type="reels"
-          medias={useMemo(
-            () => [
-              {
-                poster: proxyUrl(poster),
-                src: `${API_DOMAIN}/instagram/video?url=${encodeURIComponent(
-                  src,
-                )}&createdAt=${createdAt}`,
-              },
-            ],
-            [poster, src, createdAt],
-          )}
+          medias={[
+            {
+              poster: proxyUrl(poster),
+              src: isIOS()
+                ? proxyUrl(src)
+                : `${API_DOMAIN}/instagram/video?url=${encodeURIComponent(
+                    src,
+                  )}&createdAt=${createdAt}`,
+            },
+          ]}
         />
         <div className={styles.container}>
           <div
@@ -64,3 +64,6 @@ const ReelsPost = ({ body, createdAt, poster, src }: Reels) => {
 };
 
 export default memo(ReelsPost);
+
+// https://instagram.ficn3-4.fna.fbcdn.net/v/t66.30100-16/48735168_928466524787712_137807619184250416_n.mp4?_nc_ht=instagram.ficn3-4.fna.fbcdn.net&_nc_cat=100&_nc_ohc=R47snBm4VgMAX--N_Ak&edm=AP_V10EBAAAA&ccb=7-5&oh=00_AfAWR6eomVP_VeSrjCJ0ELAaO8aCHVtBOLr7TiLnaxbwKQ&oe=63ABDE73&_nc_sid=4f375e
+// https://scontent.cdninstagram.com/v/t66.30100-16/48735168_928466524787712_137807619184250416_n.mp4?_nc_ht=instagram.ficn3-4.fna.fbcdn.net&_nc_cat=100&_nc_ohc=R47snBm4VgMAX--N_Ak&edm=AP_V10EBAAAA&ccb=7-5&oh=00_AfAWR6eomVP_VeSrjCJ0ELAaO8aCHVtBOLr7TiLnaxbwKQ&oe=63ABDE73&_nc_sid=4f375e
