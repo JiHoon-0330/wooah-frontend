@@ -1,7 +1,11 @@
 import { useMemo } from "react";
 import getEnNameFromKoName from "../../../services/artist/enNameFromKoName";
+import getFormattedDate, {
+  getFormattedValue,
+} from "../../../services/date/format";
 import getFormattedTwitterBody from "../../../services/twitterBody/formattedTwitterBody";
 import { TWITTER_API } from "../../../types/twitter/twitterApi";
+import Button from "../../Atoms/Button/Button";
 import Card from "../../Atoms/Card/Card";
 import Date from "../../Atoms/Date/Date";
 import Images from "../../Atoms/Images/Images";
@@ -27,10 +31,15 @@ type MediaPhotoType = {
   url: string;
 };
 
+const buttonStyle = {
+  padding: "10rem 0",
+};
+
 const sortTextByLength = (list: string[]) => {
   if (!list?.length) return [];
   return [...list]?.sort((a, b) => b.length - a.length);
 };
+
 const TwitterPost = ({
   sortIndex,
   isRt,
@@ -72,6 +81,31 @@ const TwitterPost = ({
     return [videoTypeMediaList, photoTypeMediaList];
   }, [media]);
 
+  const download = (url: string, index: number) => {
+    const date = getFormattedDate(created_at).split(" ")[0].replace(/\./g, "");
+
+    const a = document.createElement("a");
+
+    a.style.display = "none";
+    a.href = url;
+    a.download = `${date}-${screen_name}-${sortIndex}-${getFormattedValue(
+      index + 1,
+    )}`;
+
+    a.click();
+    a.remove();
+  };
+
+  const onClickSave = () => {
+    media?.forEach((item: any, index) => {
+      download(
+        item?.origin?.replace("https://pbs.twimg.com/", "/twitter-image/") ??
+          item?.src?.replace("https://video.twimg.com/", "/twitter-video/"),
+        index,
+      );
+    });
+  };
+
   return (
     <Card artistName={screen_name === "wooah_nv" ? enName! : "default"}>
       <div className={styles.wrapper}>
@@ -108,6 +142,11 @@ const TwitterPost = ({
               poster,
             }))}
           />
+        )}
+        {(!!photoTypeMediaList?.length || !!videoTypeMediaList?.length) && (
+          <Button style={buttonStyle} onClick={onClickSave}>
+            저장하기
+          </Button>
         )}
         {!!meta?.length && <Images images={meta} />}
       </div>
