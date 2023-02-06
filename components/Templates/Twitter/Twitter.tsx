@@ -39,6 +39,28 @@ const Twitter = () => {
               {page?.data?.length &&
                 page?.data?.map((value, index) => {
                   const isLast = page.data.length === index + 1;
+
+                  if ("0" in value) {
+                    return (
+                      <div
+                        ref={isLast ? ref : null}
+                        key={value.sortIndex}
+                        className={styles.post}
+                      >
+                        {Object.values(value).map((v) => {
+                          if (typeof v === "string") return null;
+
+                          return (
+                            <>
+                              <TwitterPost {...v} />
+                              {!!v?.quoted && <TwitterPost {...v.quoted} />}
+                            </>
+                          );
+                        })}
+                      </div>
+                    );
+                  }
+
                   return (
                     <div
                       ref={isLast ? ref : null}
