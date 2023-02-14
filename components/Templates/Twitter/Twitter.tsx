@@ -47,12 +47,15 @@ const Twitter = () => {
                         key={value.sortIndex}
                         className={styles.post}
                       >
-                        {Object.values(value).map((v) => {
+                        {Object.values(value).map((v, i) => {
                           if (typeof v === "string") return null;
 
                           return (
                             <>
-                              <TwitterPost {...v} />
+                              <TwitterPost
+                                {...v}
+                                sortIndex={`${value}-${i < 10 ? `0${i}` : i}`}
+                              />
                               {!!v?.quoted && <TwitterPost {...v.quoted} />}
                             </>
                           );
