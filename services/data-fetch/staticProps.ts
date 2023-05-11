@@ -11,6 +11,9 @@ export const ssrReactQuery = async (type: keyof API) => {
     const { data } = await apiAxios({
       url: uri,
       method,
+      headers: {
+        "user-agent": "wooah.dlwlrma.app/vercel",
+      },
     });
     return data;
   });

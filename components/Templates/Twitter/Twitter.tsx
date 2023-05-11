@@ -44,7 +44,7 @@ const Twitter = () => {
                     return (
                       <div
                         ref={isLast ? ref : null}
-                        key={value.sortIndex}
+                        key={value.sortIndex + index}
                         className={styles.post}
                       >
                         {Object.values(value).map((v, i) => {
@@ -53,6 +53,7 @@ const Twitter = () => {
                           return (
                             <>
                               <TwitterPost
+                                key={v.sortIndex + i}
                                 {...v}
                                 sortIndex={`${value}-${i < 10 ? `0${i}` : i}`}
                               />
