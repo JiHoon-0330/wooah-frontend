@@ -32,7 +32,12 @@ const WeverseContent = (
   // );
 
   const convertWeverseImageUrl = (url: string) => {
-    return url.replace("https://weverse-phinf.pstatic.net/", "/weverse-image/");
+    const result = url.replace(
+      "https://weverse-phinf.pstatic.net/",
+      "/weverse-image/",
+    );
+
+    return result;
   };
 
   return (
