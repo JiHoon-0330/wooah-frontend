@@ -37,7 +37,7 @@ const WeverseContent = (
       "/weverse-image/",
     );
 
-    return result + "?type=s468_468_stopgif";
+    return result;
   };
 
   return (
@@ -53,7 +53,7 @@ const WeverseContent = (
           <NextImages
             images={photos.map(({ url, width, height }) => ({
               origin: url,
-              src: `${convertWeverseImageUrl(url)}`,
+              src: convertWeverseImageUrl(url),
               width,
               height,
             }))}
