@@ -68,7 +68,7 @@ const Twitter = () => {
                   return (
                     <div
                       ref={isLast ? ref : null}
-                      key={value.sortIndex}
+                      key={value.sortIndex + index}
                       className={styles.post}
                     >
                       <TwitterPost {...value} />
