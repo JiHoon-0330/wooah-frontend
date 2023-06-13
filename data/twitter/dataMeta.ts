@@ -1,7 +1,7 @@
 import { Twitter } from "../../types/twitter/twitter";
 
 const dataMeta = {
-  sortIndex: "1490974292481576960",
+  id: "1490974292481576960",
   isRt: true,
   name: "콬TV",
   screen_name: "koktv_official",

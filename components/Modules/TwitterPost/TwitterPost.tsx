@@ -41,7 +41,7 @@ const sortTextByLength = (list: string[]) => {
 };
 
 const TwitterPost = ({
-  sortIndex,
+  id,
   isRt,
   name,
   screen_name,
@@ -88,9 +88,7 @@ const TwitterPost = ({
 
     a.style.display = "none";
     a.href = url;
-    a.download = `${date}-${screen_name}-${sortIndex}-${getFormattedValue(
-      index + 1,
-    )}`;
+    a.download = `${date}-${screen_name}-${id}-${getFormattedValue(index + 1)}`;
 
     a.click();
     a.remove();
@@ -113,7 +111,7 @@ const TwitterPost = ({
           <div className={styles.nameContainer}>
             <a
               className={`text__overflow ${styles.name}`}
-              href={`https://twitter.com/${screen_name}/status/${sortIndex}`}
+              href={`https://twitter.com/${screen_name}/status/${id}`}
               target="_blank"
             >
               <TwitterName id={name} type="name" isRt={isRt} />

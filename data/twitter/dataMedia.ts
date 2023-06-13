@@ -1,7 +1,7 @@
 import { Twitter } from "../../types/twitter/twitter";
 
 const dataMedia = {
-  sortIndex: "1493495687878955008",
+  id: "1493495687878955008",
   isRt: true,
   name: "woo!ah!_JP",
   screen_name: "wooah_jp",

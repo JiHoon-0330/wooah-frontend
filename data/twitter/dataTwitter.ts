@@ -3,7 +3,7 @@ import { Twitter } from "../../types/twitter/twitter";
 const dataTwitter = {
   data: [
     {
-      sortIndex: "1537095931510005760",
+      id: "1537095931510005760",
       isRt: true,
       name: "ALL THE K-POP 올더케이팝",
       screen_name: "ALLTHEKPOP",
@@ -65,7 +65,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1537095914489548800",
+      id: "1537095914489548800",
       isRt: true,
       name: "ALL THE K-POP 올더케이팝",
       screen_name: "ALLTHEKPOP",
@@ -95,7 +95,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1537085734456541184",
+      id: "1537085734456541184",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -137,7 +137,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1537079987198648322",
+      id: "1537079987198648322",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -157,7 +157,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1537056456360755200",
+      id: "1537056456360755200",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -186,7 +186,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1537055050753019904",
+      id: "1537055050753019904",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -218,7 +218,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1537053559128064000",
+      id: "1537053559128064000",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -248,7 +248,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1537049787761049600",
+      id: "1537049787761049600",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -286,7 +286,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1537044204899033091",
+      id: "1537044204899033091",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -306,7 +306,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1537020204672090113",
+      id: "1537020204672090113",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -357,7 +357,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1537019966448209920",
+      id: "1537019966448209920",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -377,7 +377,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1537019761002917888",
+      id: "1537019761002917888",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -397,7 +397,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1537018397275267072",
+      id: "1537018397275267072",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -417,7 +417,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1537014892288671745",
+      id: "1537014892288671745",
       isRt: true,
       name: "EVERLINE",
       screen_name: "EVERLINESHOP",
@@ -441,7 +441,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1537014815235112960",
+      id: "1537014815235112960",
       isRt: true,
       name: "EVERLINE",
       screen_name: "EVERLINESHOP",
@@ -455,7 +455,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536993688194543617",
+      id: "1536993688194543617",
       isRt: true,
       name: "SHOWCHAMPION",
       screen_name: "showchampion1",
@@ -488,7 +488,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536993656900841472",
+      id: "1536993656900841472",
       isRt: true,
       name: "SHOWCHAMPION",
       screen_name: "showchampion1",
@@ -521,7 +521,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536993631403638784",
+      id: "1536993631403638784",
       isRt: true,
       name: "SHOWCHAMPION",
       screen_name: "showchampion1",
@@ -563,7 +563,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536991201609797633",
+      id: "1536991201609797633",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -587,7 +587,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536987139342499840",
+      id: "1536987139342499840",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -621,7 +621,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536972853656326145",
+      id: "1536972853656326145",
       isRt: true,
       name: "주간아이돌 (Weekly idol official)",
       screen_name: "weeklyidol_",
@@ -648,7 +648,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536969037523357698",
+      id: "1536969037523357698",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -672,7 +672,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536954540893011969",
+      id: "1536954540893011969",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -696,7 +696,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536905855462875137",
+      id: "1536905855462875137",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -720,7 +720,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536894115249795073",
+      id: "1536894115249795073",
       isRt: true,
       name: "SBS인기가요 (SBS Inkigayo)",
       screen_name: "sbsnoriter",
@@ -751,7 +751,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536894047570530304",
+      id: "1536894047570530304",
       isRt: true,
       name: "SBS인기가요 (SBS Inkigayo)",
       screen_name: "sbsnoriter",
@@ -791,7 +791,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536891984702742529",
+      id: "1536891984702742529",
       isRt: true,
       name: "CGV Artist Support Ground",
       screen_name: "CGV_FanSupport",
@@ -826,7 +826,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536855086269628417",
+      id: "1536855086269628417",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -850,7 +850,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536689860559351808",
+      id: "1536689860559351808",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -883,7 +883,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536689589607247872",
+      id: "1536689589607247872",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -916,7 +916,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536689374204571651",
+      id: "1536689374204571651",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -950,7 +950,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536688863610974208",
+      id: "1536688863610974208",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -983,7 +983,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536688659641970689",
+      id: "1536688659641970689",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -1016,7 +1016,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536687039562674179",
+      id: "1536687039562674179",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -1070,7 +1070,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536683037882060800",
+      id: "1536683037882060800",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -1090,7 +1090,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536664752142835713",
+      id: "1536664752142835713",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -1130,7 +1130,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536653780279652353",
+      id: "1536653780279652353",
       isRt: false,
       name: "woo!ah! (우아!)",
       screen_name: "wooah_nv",
@@ -1150,7 +1150,7 @@ const dataTwitter = {
       meta: [],
     },
     {
-      sortIndex: "1536651197247287296",
+      id: "1536651197247287296",
       isRt: true,
       name: "EVERLINE",
       screen_name: "EVERLINESHOP",

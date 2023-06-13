@@ -42,23 +42,15 @@ const Twitter = () => {
 
                   if ("0" in value) {
                     return (
-                      <div
-                        ref={isLast ? ref : null}
-                        key={value.sortIndex + index}
-                        className={styles.post}
-                      >
+                      <div className={styles.post} key={page.cursor + index}>
                         {Object.values(value).map((v, i) => {
                           if (typeof v === "string") return null;
 
                           return (
-                            <>
-                              <TwitterPost
-                                key={v.sortIndex + i}
-                                {...v}
-                                sortIndex={`${value}-${i < 10 ? `0${i}` : i}`}
-                              />
+                            <div ref={isLast ? ref : null} key={v.id}>
+                              <TwitterPost key={v.id + i} {...v} />
                               {!!v?.quoted && <TwitterPost {...v.quoted} />}
-                            </>
+                            </div>
                           );
                         })}
                       </div>
@@ -68,7 +60,7 @@ const Twitter = () => {
                   return (
                     <div
                       ref={isLast ? ref : null}
-                      key={value.sortIndex + index}
+                      key={value.id + index}
                       className={styles.post}
                     >
                       <TwitterPost {...value} />

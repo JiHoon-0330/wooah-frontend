@@ -1,5 +1,5 @@
 interface TwitterItme {
-  sortIndex: string;
+  id: string;
   isRt: boolean;
   name: string;
   screen_name: string;
