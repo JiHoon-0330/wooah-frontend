@@ -37,3 +37,6 @@
   font-size: 15rem;
   font-weight: 700;
 }
+.member:empty {
+  display: none;
+}
