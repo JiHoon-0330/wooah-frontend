@@ -10,9 +10,6 @@ const nextConfig = {
   compiler: {
     removeConsole: isProd,
   },
-  experimental: {
-    workerThreads: true,
-  },
   images: {
     formats: ["image/avif", "image/webp"],
     domains: [
