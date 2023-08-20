@@ -33,7 +33,7 @@ const Twitter = () => {
   return (
     <>
       {!!data?.pages?.length &&
-        data?.pages?.map((page) => {
+        data?.pages?.map((page, pageIndex) => {
           return (
             <Fragment key={page.cursor}>
               {page?.data?.length &&
@@ -42,12 +42,18 @@ const Twitter = () => {
 
                   if ("0" in value) {
                     return (
-                      <div className={styles.post} key={page.cursor + index}>
+                      <div
+                        className={styles.post}
+                        key={page.cursor + pageIndex + index}
+                      >
                         {Object.values(value).map((v, i) => {
                           if (typeof v === "string") return null;
 
                           return (
-                            <div ref={isLast ? ref : null} key={v.id}>
+                            <div
+                              ref={isLast ? ref : null}
+                              key={v.id + pageIndex + index}
+                            >
                               <TwitterPost key={v.id + i} {...v} />
                               {!!v?.quoted && <TwitterPost {...v.quoted} />}
                             </div>
@@ -60,7 +66,7 @@ const Twitter = () => {
                   return (
                     <div
                       ref={isLast ? ref : null}
-                      key={value.id + index}
+                      key={value.id + pageIndex + index}
                       className={styles.post}
                     >
                       <TwitterPost {...value} />

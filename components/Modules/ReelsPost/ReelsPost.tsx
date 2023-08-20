@@ -33,8 +33,8 @@ const ReelsPost = ({ body, createdAt, poster, src }: Reels) => {
     <Card artistName="default">
       <div className={styles.wrapper}>
         <div className={styles.title}>
-          <Link href="https://www.instagram.com/wooah_nv">
-            <a target="_blank">@wooah_nv</a>
+          <Link href="https://www.instagram.com/wooah_nv" target="_blank">
+            @wooah_nv
           </Link>
           <Date date={createdAt * 1000} />
         </div>

@@ -17,18 +17,21 @@ const NextImages = ({ images }: Props) => {
   return (
     <div className={styles.images}>
       {images.map(({ origin, ...props }) => (
-        <Link key={origin} href={origin}>
-          <a target="_blank">
-            <Image
-              {...props}
-              layout="responsive"
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL={`/_next/image?url=${encodeURIComponent(
-                props.src,
-              )}&w=1&q=15`}
-            />
-          </a>
+        <Link key={origin} href={origin} target="_blank">
+          <Image
+            {...props}
+            className={styles.image}
+            loading="lazy"
+            placeholder="blur"
+            blurDataURL={`/_next/image?url=${encodeURIComponent(
+              props.src,
+            )}&w=1&q=15`}
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+            alt=""
+          />
         </Link>
       ))}
     </div>

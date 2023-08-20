@@ -14,10 +14,8 @@ const Images = ({ images }: Props) => {
   return (
     <div className={styles.images}>
       {images?.map(({ src, origin }) => (
-        <Link href={origin}>
-          <a target="_blank">
-            <img className={styles.image} src={src} alt="" />
-          </a>
+        <Link href={origin} target="_blank">
+          <img className={styles.image} src={src} alt="" />
         </Link>
       ))}
     </div>

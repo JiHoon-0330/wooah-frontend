@@ -28,15 +28,13 @@ const Navbar = () => {
         const path = MATCH[menu];
         return (
           <Link href={path} key={menu} prefetch={false}>
-            <a>
-              <button
-                className={`${path === router.asPath ? styles.selected : ""} ${
-                  styles.menu
-                }`}
-              >
-                {menu}
-              </button>
-            </a>
+            <button
+              className={`${path === router.asPath ? styles.selected : ""} ${
+                styles.menu
+              }`}
+            >
+              {menu}
+            </button>
           </Link>
         );
       })}
